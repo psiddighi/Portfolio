@@ -31,7 +31,12 @@ export default defineConfig(({ mode }) => ({
         format: 'es',
         entryFileNames: 'assets/[name].[hash].js',
         chunkFileNames: 'assets/[name].[hash].js',
-        assetFileNames: 'assets/[name].[hash][extname]'
+        assetFileNames: ({ name }) => {
+          if (name?.includes('og-image') || name?.includes('.png') || name?.includes('.jpg') || name?.includes('.jpeg') || name?.includes('.svg') || name?.includes('.gif')) {
+            return 'assets/images/[name].[hash][extname]';
+          }
+          return 'assets/[name].[hash][extname]';
+        }
       }
     }
   }

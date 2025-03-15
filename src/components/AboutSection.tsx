@@ -104,7 +104,8 @@ const AboutSection = () => {
               
               <div className="mb-6">
                 <p className="mb-4">
-                  I'm Parsa Siddighi, A Netherlands-based student Full-Stack developer, and I work on creative, clean and user friendly solutions on the web. I have three years of experience using Front-End and Back-End techniques combined with various design tools
+                  I'm Parsa Siddighi, A Netherlands-based student Full-Stack developer, and I work on creative, clean and user friendly solutions on the web. 
+                  I have more than 3+ of learning experience using Front-End and Back-End techniques combined with various design tools and half a year of working experience during an internship at a web development business where I mainly contributed to wordpress based websites. I am 20 years old and currently looking forward to graduating next year during my graduation internship
                 </p>
                 
                 <div className="flex items-center justify-between">

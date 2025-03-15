@@ -133,9 +133,9 @@ const ProjectsPage = () => {
       <main>
         <section className="pt-32 pb-16 px-6 md:px-10 lg:px-16">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">My <span className="text-accent">Projects</span></h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Top <span className="text-accent">Projects</span></h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-12">
-              A collection of my work across various domains including web development, design, and software engineering.
+              A collection of my most recent works across various domains including web development and design. These are the works that I am currently the most proud of.
             </p>
             
             <div id="projects-grid" className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-4 auto-rows-[minmax(180px,auto)]">
