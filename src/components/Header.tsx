@@ -54,13 +54,13 @@ const Header = () => {
 
         <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
           <li className="animate-slide-in-top md:animate-slide-in-left" style={{ animationDelay: "100ms" }}>
-            <Link to="/about" className="hover:text-highlight transition-colors link-underline">About</Link>
+            <Link to="/about" className="hover:text-highlight transition-colors link-underline" onClick={() => setIsMenuOpen(false)}>About</Link>
           </li>
           <li className="animate-slide-in-top md:animate-slide-in-left" style={{ animationDelay: "200ms" }}>
-            <Link to="/blog" className="hover:text-highlight transition-colors link-underline">Blog</Link>
+            <Link to="/blog" className="hover:text-highlight transition-colors link-underline" onClick={() => setIsMenuOpen(false)}>Blog</Link>
           </li>
           <li className="animate-slide-in-top md:animate-slide-in-left" style={{ animationDelay: "300ms" }}>
-            <Link to="/projects" className="hover:text-highlight transition-colors link-underline">Projects</Link>
+            <Link to="/projects" className="hover:text-highlight transition-colors link-underline" onClick={() => setIsMenuOpen(false)}>Projects</Link>
           </li>
         </ul>
       </nav>

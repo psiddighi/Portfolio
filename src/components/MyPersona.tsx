@@ -21,7 +21,7 @@ const MyPersona = () => {
           <div className="bg-white p-4 pb-6 shadow-lg max-w-[280px] transform rotate-[-3deg] hover:rotate-0 transition-all duration-300">
             <div className="relative mb-4 overflow-hidden">
               <img 
-                src="./images/IMG_2311_2.jpg" 
+                src="/Portfolio/images/IMG_2311_2.jpg" 
                 alt="The one" 
                 className="w-full h-64 object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />
@@ -33,7 +33,7 @@ const MyPersona = () => {
           <div className="bg-white p-4 pb-6 shadow-lg max-w-[280px] transform hover:rotate-[2deg] transition-all duration-300">
             <div className="relative mb-4 overflow-hidden">
               <img 
-                src="./images/stage.jpg" 
+                src="/Portfolio/images/stage.jpg" 
                 alt="Do 2 work" 
                 className="w-full h-64 object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />
@@ -45,7 +45,7 @@ const MyPersona = () => {
           <div className="bg-white p-4 pb-6 shadow-lg max-w-[280px] transform rotate-[3deg] hover:rotate-0 transition-all duration-300">
             <div className="relative mb-4 overflow-hidden">
               <img 
-                src="./images/bridge.jpeg" 
+                src="/Portfolio/images/bridge.jpeg" 
                 alt="Lifestyle" 
                 className="w-full h-64 object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />
