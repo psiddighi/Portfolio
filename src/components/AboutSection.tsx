@@ -26,11 +26,11 @@ const AboutSection = () => {
       {/* Banner Image */}
       <div className="w-full h-64 md:h-80 lg:h-96 mb-12 relative overflow-hidden rounded-lg">
         <img 
-          src="IMG_2137.JPG" 
+          src="IMG_2317.jpg" 
           alt="Technology Banner" 
           className="w-full h-full object-cover transition-all duration-300"
         />
-        <div className="absolute inset-0 bg-background/25 flex items-center justify-center">
+        <div className="absolute inset-0 bg-background/250 flex items-center justify-center">
         </div>
       </div>
       {/* Circuit board background pattern - SVG overlay */}
@@ -105,7 +105,7 @@ const AboutSection = () => {
               <div className="mb-6">
                 <p className="mb-4">
                   I'm Parsa Siddighi, A Netherlands-based student Full-Stack developer, and I work on creative, clean and user friendly solutions on the web. 
-                  I have more than 3+ of learning experience using Front-End and Back-End techniques combined with various design tools and half a year of working experience during an internship at a web development business where I mainly contributed to wordpress based websites. I am 20 years old and currently looking forward to graduating next year during my graduation internship
+                  I have more than 3+ years of learning experience using Front-End and Back-End techniques combined with various design tools and half a year of working experience during an internship at a web development business where I mainly contributed to wordpress based websites for companies and startups. I am currently looking forward to graduating next year during my graduation internship
                 </p>
                 
                 <div className="flex items-center justify-between">
