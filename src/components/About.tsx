@@ -106,8 +106,8 @@ const About = () => {
           <div className="flex flex-col md:flex-row gap-8">
             <div className="md:w-1/2">
               <p className="text-base md:text-lg space-y-4 leading-relaxed">
-                I am currently a student in the 3rd year of my study. I study full stack web/
-                software development at ROC Tilburg. The reason why I chose this career is
+                I am currently a student in the 3rd year of my study. I study full stack web and
+                software development at Yonder. The reason why I chose this career is
                 because I loved working with computers ever since I was young. As I got older I
                 became more and more interested in how technology works, so I wanted nothing
                 more than to do something with computers/software after my high school career.

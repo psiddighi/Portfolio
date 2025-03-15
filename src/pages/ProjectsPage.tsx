@@ -70,21 +70,21 @@ const ProjectsPage = () => {
   const projects = [
     {
       title: "Infomedics",
-      description: "Wordpress website for a medical clinic made with Elementor Pro, Figma and various plugins",
+      description: "Wordpress website I made during my internship for a medical clinic made with Elementor Pro, Figma and various plugins",
       image: "Infomedics.png",
       tags: ["Wordpress", "Elementor", "Figma"],
       size: "medium" as const,
     },
     {
       title: "TijdelijkZakelijkInternet",
-      description: "A wordpress website for a internet provider made with Wordpress and Elementor",
+      description: "A wordpress website I made during my internship for a internet provider made with Wordpress and Elementor",
       image: "TZI.png",
       tags: ["Wordpress", "Elementor", "Figma"],
       size: "small" as const,
     },
     {
       title: "Ethical Clothing webshop",
-      description: "My first Laravel project for a webshop that sells ethical clothing",
+      description: "My first Laravel project for a webshop that sells ethical clothing with a fully functional MySQL database and PHP back-end",
       image: "ethical clothes.png",
       tags: ["Laravel", "PHP", "MySQL"],
       size: "large" as const,
@@ -93,7 +93,7 @@ const ProjectsPage = () => {
       title: "Democratic Movie Night",
       description: "A web application for democratic movie nights where you can vote for what movie to watch",
       image: "Democratische Bioscoop.png",
-      tags: ["React", "TypeScript", "UI/UX"],
+      tags: ["React", "TypeScript","REST API", "UI/UX"],
       size: "small" as const,
     },
     {
@@ -105,7 +105,7 @@ const ProjectsPage = () => {
     },
     {
       title: "VTHoflaan",
-      description: "A simple static website for a garden association to display information",
+      description: "A simple static website for a garden association to display information and news rubrics",
       image: "Tuin.png",
       tags: ["HTML", "CSS", "JavaScript"],
       size: "medium" as const,
@@ -121,7 +121,7 @@ const ProjectsPage = () => {
       title: "Furniture webstore",
       description: "First fully functional MERN full-stack web application for a furniture webshop school project",
       image: "Woonwinkel.png",
-      tags: ["React", "TypeScript", "MongoDB & ExpressJS", "Node.js"],
+      tags: ["React", "NextJS", "TypeScript", "MongoDB & ExpressJS", "Node.js"],
       size: "medium" as const,
     },
     
