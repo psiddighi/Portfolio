@@ -20,4 +20,16 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    // Ensure proper MIME types for JavaScript modules
+    rollupOptions: {
+      output: {
+        // Ensure proper chunk naming and format
+        manualChunks: undefined,
+        format: 'es'
+      }
+    }
+  }
 }));
