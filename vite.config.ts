@@ -23,12 +23,15 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
     assetsDir: "assets",
-    // Ensure proper MIME types for JavaScript modules
+    modulePreload: {
+      polyfill: true
+    },
     rollupOptions: {
       output: {
-        // Ensure proper chunk naming and format
-        manualChunks: undefined,
-        format: 'es'
+        format: 'es',
+        entryFileNames: '[name].[hash].js',
+        chunkFileNames: '[name].[hash].js',
+        assetFileNames: '[name].[hash][extname]'
       }
     }
   }
