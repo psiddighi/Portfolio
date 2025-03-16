@@ -41,7 +41,7 @@ const Career = () => {
           
           <div className="lg:w-1/3">
             <img 
-              src="/Portfolio/foto van mezelf in silhouette.jpg" 
+              src="./Portfolio/foto van mezelf in silhouette.jpg" 
               alt="Career" 
               className="w-full h-auto rounded-lg shadow-lg"
             />

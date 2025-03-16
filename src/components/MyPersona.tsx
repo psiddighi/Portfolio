@@ -10,7 +10,7 @@ const MyPersona = () => {
         
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
-            TELLING YOU<br />
+            TELLING YOU
             EVERYTHING<br />
             YOU NEED TO KNOW
           </h1>
