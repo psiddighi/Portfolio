@@ -26,7 +26,7 @@ const AboutSection = () => {
       {/* Banner Image */}
       <div className="w-full h-64 md:h-80 lg:h-96 mb-12 relative overflow-hidden rounded-lg">
         <img 
-          src="IMG_2317.jpg" 
+          src="/Portfolio/IMG_2317.jpg" 
           alt="Technology Banner" 
           className="w-full h-full object-cover transition-all duration-300"
         />
@@ -112,7 +112,7 @@ const AboutSection = () => {
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-3">
                       <img 
-                        src="1719273186949.jpg" 
+                        src="/Portfolio/1719273186949.jpg" 
                         alt="Parsa Siddighi" 
                         className="w-full h-full object-cover"
                       />
