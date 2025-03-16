@@ -36,7 +36,8 @@ export default defineConfig(({ mode }) => ({
           if (name?.includes('og-image') || name?.includes('.png') || name?.includes('.jpg') || name?.includes('.jpeg') || name?.includes('.svg') || name?.includes('.gif')) {
             // Check if the file is in the Portfolio directory
             if (name?.includes('Portfolio/')) {
-              return '[name].[hash][extname]';
+              // Don't add hash to Portfolio files to preserve exact filenames with spaces
+              return '[name][extname]';
             }
             return 'assets/images/[name].[hash][extname]';
           }
