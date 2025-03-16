@@ -33,11 +33,13 @@ export default defineConfig(({ mode }) => ({
         chunkFileNames: 'assets/[name].[hash].js',
         assetFileNames: ({ name }) => {
           // Keep images in the Portfolio directory to match the references in the code
-          if (name?.includes('og-image') || name?.includes('.png') || name?.includes('.jpg') || name?.includes('.jpeg') || name?.includes('.svg') || name?.includes('.gif')) {
+          if (name?.includes('og-image') || name?.includes('.png') || name?.includes('.jpg') || name?.includes('.jpeg') || name?.includes('.svg') || name?.includes('.gif') || name?.includes('.JPG')) {
             // Check if the file is in the Portfolio directory
             if (name?.includes('Portfolio/')) {
               // Don't add hash to Portfolio files to preserve exact filenames with spaces
-              return '[name][extname]';
+              // Ensure the path is preserved exactly as is, including spaces
+              const fileName = name.split('/').pop();
+              return name.includes('/') ? name : `${fileName}`;
             }
             return 'assets/images/[name].[hash][extname]';
           }
