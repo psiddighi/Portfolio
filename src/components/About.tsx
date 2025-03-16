@@ -51,7 +51,7 @@ const About = () => {
             <div className="transform rotate-[-3deg]">
               <div className="bg-white p-3 pb-12 shadow-md w-56 h-72 flex flex-col items-center">
                 <img 
-                  src="/Portfolio/IMG_2311_2.jpg" 
+                  src="IMG_2311_2.jpg" 
                   alt="Coding workspace" 
                   className="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-300"
                 />
@@ -62,7 +62,7 @@ const About = () => {
             <div className="transform rotate-[2deg]">
               <div className="bg-white p-3 pb-12 shadow-md w-56 h-72 flex flex-col items-center">
                 <img 
-                  src="/Portfolio/bridge.jpeg" 
+                  src="bridge.jpeg" 
                   alt="Workspace" 
                   className="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-300"
                 />
@@ -73,7 +73,7 @@ const About = () => {
             <div className="transform rotate-[-1deg]">
               <div className="bg-white p-3 pb-12 shadow-md w-56 h-72 flex flex-col items-center">
                 <img 
-                  src="/Portfolio/setup.jpg" 
+                  src="setup.jpg" 
                   alt="Lifestyle" 
                   className="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-300"
                 />
