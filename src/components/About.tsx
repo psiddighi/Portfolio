@@ -51,7 +51,7 @@ const About = () => {
             <div className="transform rotate-[-3deg]">
               <div className="bg-white p-3 pb-12 shadow-md w-56 h-72 flex flex-col items-center">
                 <img 
-                  src="IMG_2311_2.jpg" 
+                  src="/Portfolio/IMG_2311_2.jpg" 
                   alt="Coding workspace" 
                   className="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-300"
                 />
@@ -62,7 +62,7 @@ const About = () => {
             <div className="transform rotate-[2deg]">
               <div className="bg-white p-3 pb-12 shadow-md w-56 h-72 flex flex-col items-center">
                 <img 
-                  src="bridge.jpeg" 
+                  src="/Portfolio/bridge.jpeg" 
                   alt="Workspace" 
                   className="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-300"
                 />
@@ -73,7 +73,7 @@ const About = () => {
             <div className="transform rotate-[-1deg]">
               <div className="bg-white p-3 pb-12 shadow-md w-56 h-72 flex flex-col items-center">
                 <img 
-                  src="setup.jpg" 
+                  src="/Portfolio/setup.jpg" 
                   alt="Lifestyle" 
                   className="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-300"
                 />
@@ -119,7 +119,7 @@ const About = () => {
             <div className="md:w-1/2">
               <div className="rounded-2xl overflow-hidden h-64">
                 <img 
-                  src="foto van mezelf in silhouette.jpg" 
+                  src="/Portfolio/foto van mezelf in silhouette.jpg" 
                   alt="Person profile" 
                   className="w-full h-full object-cover"
                 />
@@ -146,7 +146,7 @@ const About = () => {
             <div className="md:w-1/2">
               <div className="rounded-2xl overflow-hidden h-64">
                 <img 
-                  src="setup.jpg" 
+                  src="/Portfolio/setup.jpg" 
                   alt="Workspace setup" 
                   className="w-full h-full object-cover"
                 />

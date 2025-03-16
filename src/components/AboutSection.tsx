@@ -26,7 +26,7 @@ const AboutSection = () => {
       {/* Banner Image */}
       <div className="w-full h-64 md:h-80 lg:h-96 mb-12 relative overflow-hidden rounded-lg">
         <img 
-          src="IMG_2317.jpg" 
+          src="/Portfolio/IMG_2317.jpg" 
           alt="Technology Banner" 
           className="w-full h-full object-cover transition-all duration-300"
         />
