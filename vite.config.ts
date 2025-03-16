@@ -32,7 +32,12 @@ export default defineConfig(({ mode }) => ({
         entryFileNames: 'assets/[name].[hash].js',
         chunkFileNames: 'assets/[name].[hash].js',
         assetFileNames: ({ name }) => {
+          // Keep images in the Portfolio directory to match the references in the code
           if (name?.includes('og-image') || name?.includes('.png') || name?.includes('.jpg') || name?.includes('.jpeg') || name?.includes('.svg') || name?.includes('.gif')) {
+            // Check if the file is in the Portfolio directory
+            if (name?.includes('Portfolio/')) {
+              return '[name].[hash][extname]';
+            }
             return 'assets/images/[name].[hash][extname]';
           }
           return 'assets/[name].[hash][extname]';
