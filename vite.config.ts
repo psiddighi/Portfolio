@@ -26,11 +26,16 @@ export default defineConfig(({ mode }) => ({
     modulePreload: {
       polyfill: true
     },
+    manifest: true,
+    sourcemap: true,
     rollupOptions: {
       output: {
         format: 'es',
         entryFileNames: 'assets/[name].[hash].js',
         chunkFileNames: 'assets/[name].[hash].js',
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+        },
         assetFileNames: ({ name }) => {
           // Keep images in the Portfolio directory to match the references in the code
           if (name?.includes('og-image') || name?.includes('.png') || name?.includes('.jpg') || name?.includes('.jpeg') || name?.includes('.svg') || name?.includes('.gif') || name?.includes('.JPG')) {
