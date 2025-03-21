@@ -50,7 +50,7 @@ const Contact = () => {
         <div className="flex justify-center mt-6 sm:mt-8">
           <a href="mailto:parsa.siddighi@example.com">
             <Button 
-              className={`bg-white dark:bg-white text-black hover:bg-highlight hover:text-white transition-colors duration-300 shadow-lg ${isVisible ? 'animate-slide-in-bottom' : 'opacity-0'}`}
+              className={`bg-white hover:bg-yellow-400 dark:bg-white text-black dark:hover:bg-gray-400 transition-colors duration-300 shadow-lg ${isVisible ? 'animate-slide-in-bottom' : 'opacity-0'}`}
               style={{ animationDelay: "300ms" }}
             >
               <Mail className="w-4 h-4 mr-2" />
