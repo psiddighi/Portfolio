@@ -1,4 +1,4 @@
-import { SiReact, SiTypescript, SiTailwindcss, SiJavascript, SiHtml5, SiCss3, SiPhp, SiMysql, SiLaravel, SiWordpress } from "react-icons/si";
+import { SiReact, SiTypescript, SiTailwindcss, SiJavascript, SiHtml5, SiCss3, SiPhp, SiMysql, SiLaravel, SiWordpress, SiMongodb, SiWebpack, SiJquery, SiSass, SiNpm, SiGit } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
 import { FaApple, FaNodeJs } from "react-icons/fa";
 import { useEffect, useRef } from "react";
@@ -15,6 +15,8 @@ const TechStackCarousel = () => {
     { Icon: SiPhp, name: "PHP", color: "#777BB4" },
     { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
     { Icon: SiMysql, name: "MySQL", color: "#4479A1" },
+    { Icon: SiMongodb, name: "MongoDB", color: "#47A248" },
+    { Icon: SiWebpack, name: "Webpack", color: "#8DD6F9" },
   ];
 
   const secondRowIcons = [
@@ -22,8 +24,11 @@ const TechStackCarousel = () => {
     { Icon: FaNodeJs, name: "Node.js", color: "#339933" },
     { Icon: SiReact, name: "React", color: "#61DAFB" },
     { Icon: SiWordpress, name: "WordPress", color: "#21759B" },
-    { Icon: TbBrandVscode, name: "VS Code", color: "#007ACC" },
-    { Icon: FaApple, name: "Apple", color: "#A2AAAD" },
+    { Icon: SiJquery, name: "jQuery", color: "#0769AD" },
+    { Icon: SiSass, name: "Sass", color: "#CC6699" },
+    { Icon: SiTailwindcss, name: "Tailwind", color: "#06B6D4" },
+    { Icon: SiNpm, name: "NPM", color: "#CB3837" },
+    { Icon: SiGit, name: "Git", color: "#F05032" },
   ];
 
   // Function to render a tech icon

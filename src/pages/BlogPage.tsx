@@ -13,7 +13,7 @@ interface BlogPostProps {
 const BlogPost = ({ title, date, isVisible, index, link }: BlogPostProps) => {
   return (
     <div 
-      className={`border-b border-border py-6 group hover:border-accent transition-all duration-300 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
+      className={`relative border-b border-border py-6 group hover:bg-card hover:border-accent transition-all duration-300 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="flex flex-col">
@@ -55,35 +55,10 @@ const BlogPage = () => {
 
   const blogPosts = [
     {
-      title: "Test Title",
-      date: "2023-08-08",
-      link: "/blog/test-title"
-    },
-    {
       title: "Internship Allround Web",
       date: "2024-26-08",
-      link: "/blog/internship-allround-web"
-    },
-    {
-      title: "My Journey as a Frontend Developer",
-      date: "2024-15-07",
-      link: "/blog/frontend-journey"
-    },
-    {
-      title: "Learning React and TypeScript",
-      date: "2024-03-06",
-      link: "/blog/react-typescript"
-    },
-    {
-      title: "UI/UX Design Principles",
-      date: "2024-22-05",
-      link: "/blog/ui-ux-principles"
-    },
-    {
-      title: "Building My First Portfolio",
-      date: "2024-10-04",
-      link: "/blog/first-portfolio"
-    },
+      link: "/#/blog/internship-allround-web"
+    }
   ];
 
   return (

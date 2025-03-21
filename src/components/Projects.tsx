@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProjectCard = ({ number, title, subtitle, description, isVisible }) => {
   return (
@@ -47,12 +48,12 @@ const Projects = () => {
           <h1 className="text-4xl md:text-5xl font-bold uppercase">
             SOME OF MY RECENT<br />WORKPIECES
           </h1>
-          <a 
-            href="#" 
+          <button 
+            onClick={() => window.location.href = '/#/projects'} 
             className="hidden md:block text-foreground hover:text-highlight transition-colors"
           >
             See More
-          </a>
+          </button>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -82,12 +83,12 @@ const Projects = () => {
         </div>
         
         <div className="mt-8 text-center md:hidden">
-          <a 
-            href="#" 
+          <button 
+            onClick={() => window.location.href = '/#/projects'} 
             className="text-foreground hover:text-highlight transition-colors"
           >
             See More
-          </a>
+          </button>
         </div>
       </div>
     </section>

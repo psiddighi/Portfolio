@@ -29,7 +29,7 @@ const Career = () => {
           <div className="lg:w-2/3">
             <p className="mb-6">
               I am currently a student in the 3rd year of my study. I study full stack 
-              web/ software development at ROC Tilburg. The reason why I chose 
+              web/software development at Yonder. The reason why I chose 
               this career is because I loved working with computers ever since I 
               was young. As I got older I became more and more interested in how 
               technology works, so I wanted nothing more than to do something 

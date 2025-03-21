@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 // Tech icons
-import { SiHtml5, SiJavascript, SiPhp, SiMysql, SiBootstrap, SiCss3, SiLaravel, SiNpm, SiGithub } from "react-icons/si";
+import { SiHtml5, SiJavascript, SiPhp, SiMysql, SiBootstrap, SiCss3, SiLaravel, SiNpm, SiGithub, SiMongodb, SiWebpack, SiJquery, SiSass, SiTailwindcss, SiGit } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
 
 const About = () => {
@@ -87,15 +87,21 @@ const About = () => {
         <div className="flex justify-center mb-16">
           <div className="flex flex-wrap justify-center gap-8 md:gap-12">
             <SiHtml5 className="text-4xl text-[#E34F26]" />
+            <SiCss3 className="text-4xl text-[#1572B6]" />
             <SiJavascript className="text-4xl text-[#F7DF1E]" />
             <SiPhp className="text-4xl text-[#777BB4]" />
             <SiMysql className="text-4xl text-[#4479A1]" />
+            <SiMongodb className="text-4xl text-[#47A248]" />
             <SiBootstrap className="text-4xl text-[#7952B3]" />
-            <SiCss3 className="text-4xl text-[#1572B6]" />
+            <SiTailwindcss className="text-4xl text-[#06B6D4]" />
+            <SiSass className="text-4xl text-[#CC6699]" />
             <SiLaravel className="text-4xl text-[#FF2D20]" />
+            <SiJquery className="text-4xl text-[#0769AD]" />
+            <SiWebpack className="text-4xl text-[#8DD6F9]" />
             <SiNpm className="text-4xl text-[#CB3837]" />
-            <TbBrandVscode className="text-4xl text-[#007ACC]" />
+            <SiGit className="text-4xl text-[#F05032]" />
             <SiGithub className="text-4xl text-white" />
+            <TbBrandVscode className="text-4xl text-[#007ACC]" />
           </div>
         </div>
 

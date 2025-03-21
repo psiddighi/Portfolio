@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { FileText } from "lucide-react";
+import { FileText, Download } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -14,9 +14,14 @@ const Hero = () => {
           <p className="text-xl bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">Creative Developer & Designer</p>
         </div>
         
-        <Button className="bg-white text-black hover:bg-accent/90 transition-colors mt-4 flex items-center gap-2">
-          <FileText className="h-4 w-4" />
-          My Resume
+        <Button asChild className="bg-white text-black hover:bg-accent/90 transition-colors mt-4 flex items-center gap-2 px-6 w-fit group">
+          <a href="/Portfolio/Resume Parsa Siddighi.pdf" download>
+            <span className="relative w-4 h-4">
+              <FileText className="h-4 w-4 absolute transition-all duration-300 group-hover:opacity-0 group-hover:-translate-y-2" />
+              <Download className="h-4 w-4 absolute opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0" />
+            </span>
+            My Resume
+          </a>
         </Button>
       </div>
       
@@ -27,11 +32,11 @@ const Hero = () => {
           </h1>
           <div className="mt-2 text-sm md:text-base font-medium text-gray-400">
             <p className="mb-1 inline-block">🎓 3rd Year Student Software Developer At</p>
-            <span className="inline-block"> </span>
-            <a href="#" className="text-orange-500 hover:underline inline-block">Yonder</a>
+            <span className="inline-block">&nbsp;</span>
+            <a href="https://www.yonder.nl/" target="_blank" className="text-orange-500 hover:underline inline-block">Yonder</a>
             <p className="mb-1 inline-block">, (former) Intern At</p>
-            <span className="inline-block"> </span>
-            <a href="#" className="bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text hover:underline inline-block">Allround Web</a>
+            <span className="inline-block">&nbsp;</span>
+            <a href="https://allroundweb.nl/" target="_blank" className="bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text hover:underline inline-block">Allround Web</a>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Laptop, Paintbrush, Camera } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -54,7 +55,7 @@ const AboutSection = () => {
       
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="uppercase text-xl mb-12 text-center">
-          <span className="inline-block border-b-2 border-foreground pb-2">ABOUT ME.</span>
+          <span className="inline-block border-b-2 border-foreground pb-2">ABOUT ME</span>
         </h2>
         
 
@@ -67,7 +68,7 @@ const AboutSection = () => {
                 <span className="inline-block mr-2">👋</span> HI THERE, I STUDY
               </p>
               <h3 className="text-4xl font-bold mb-2">SOFTWARE<br />DEVELOPMENT</h3>
-              <p className="text-xl mb-6">at <span className="text-yellow-400">Yonder</span></p>
+              <p className="text-xl mb-6">at <span className="text-orange-400">Yonder</span></p>
             </div>
             
             <div>
@@ -108,7 +109,7 @@ const AboutSection = () => {
                   I have more than 3+ years of learning experience using Front-End and Back-End techniques combined with various design tools and half a year of working experience during an internship at a web development business where I mainly contributed to wordpress based websites for companies and startups. I am currently looking forward to graduating next year during my graduation internship
                 </p>
                 
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-3">
                       <img 
@@ -120,8 +121,8 @@ const AboutSection = () => {
                     <span className="font-bold">Parsa Siddighi</span>
                   </div>
                   
-                  <a href="#" className="font-bold flex items-center">
-                    Learn More <span className="ml-1">→</span>
+                  <a href="/#/about" className="font-bold flex items-center hover:text-gray-700 transition-colors">
+                    Learn More <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
                   </a>
                 </div>
               </div>
