@@ -48,7 +48,7 @@ const Contact = () => {
         </div>
         
         <div className="flex justify-center mt-6 sm:mt-8">
-          <a href="mailto:parsa.siddighi@example.com">
+          <a href="mailto:zakelijkps@gmail.com.com">
             <Button 
               className={`bg-white hover:bg-yellow-400 dark:bg-white text-black dark:hover:bg-gray-400 transition-colors duration-300 shadow-lg ${isVisible ? 'animate-slide-in-bottom' : 'opacity-0'}`}
               style={{ animationDelay: "300ms" }}
