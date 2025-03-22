@@ -6,6 +6,7 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   base: "/Portfolio/",
+  // Ensure proper MIME types for TypeScript files
   server: {
     host: "::",
     port: 8080,
@@ -28,6 +29,8 @@ export default defineConfig(({ mode }) => ({
     },
     manifest: true,
     sourcemap: true,
+    // Ensure all TypeScript files are processed as JavaScript
+    // This prevents MIME type issues with GitHub Pages
     rollupOptions: {
       output: {
         format: 'es',
