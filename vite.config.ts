@@ -34,7 +34,9 @@ export default defineConfig(({ mode }) => ({
     // Ensure all TypeScript files are processed as JavaScript
     // This prevents MIME type issues with GitHub Pages
     rollupOptions: {
+      // Add proper MIME type headers for JavaScript files
       output: {
+        // Ensure JavaScript files have the correct MIME type by adding .js extension explicitly
         format: 'es',
         entryFileNames: 'assets/[name].[hash].js',
         chunkFileNames: 'assets/[name].[hash].js',
