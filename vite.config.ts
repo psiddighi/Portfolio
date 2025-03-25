@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/",
+  base: "/style-symphony-sandbox-main/",
   // Ensure proper MIME types for TypeScript files
   server: {
     host: "::",
