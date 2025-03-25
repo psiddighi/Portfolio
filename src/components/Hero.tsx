@@ -15,7 +15,7 @@ const Hero = () => {
         </div>
         
         <Button asChild className="bg-white text-black hover:bg-accent/90 transition-colors mt-4 flex items-center gap-2 px-6 w-fit group">
-          <a href="/Portfolio/Resume Parsa Siddighi.pdf" download>
+          <a href="./Resume Parsa Siddighi.pdf" download>
             <span className="relative w-4 h-4">
               <FileText className="h-4 w-4 absolute transition-all duration-300 group-hover:opacity-0 group-hover:-translate-y-2" />
               <Download className="h-4 w-4 absolute opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0" />

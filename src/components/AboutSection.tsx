@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Laptop, Paintbrush, Camera } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -121,9 +122,12 @@ const AboutSection = () => {
                     <span className="font-bold">Parsa Siddighi</span>
                   </div>
                   
-                  <a href="/#/about" className="font-bold flex items-center hover:text-gray-700 transition-colors">
+                  <Link to="/about" className="font-bold flex items-center hover:text-gray-700 transition-colors group" onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/about');
+                  }}>
                     Learn More <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
