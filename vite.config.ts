@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/Portfolio/",
+  base: "/",
   // Ensure proper MIME types for TypeScript files
   server: {
     host: "::",
@@ -29,6 +29,8 @@ export default defineConfig(({ mode }) => ({
     },
     manifest: true,
     sourcemap: true,
+    // Copy the .nojekyll file to the output directory
+    emptyOutDir: true,
     // Ensure all TypeScript files are processed as JavaScript
     // This prevents MIME type issues with GitHub Pages
     rollupOptions: {
@@ -47,7 +49,7 @@ export default defineConfig(({ mode }) => ({
               // Don't add hash to Portfolio files to preserve exact filenames with spaces
               // Ensure the path is preserved exactly as is, including spaces
               const fileName = name.split('/').pop();
-              return name.includes('/') ? name : `${fileName}`;
+              return `Portfolio/${fileName}`;
             }
             return 'assets/images/[name].[hash][extname]';
           }
