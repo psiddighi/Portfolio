@@ -1,19 +1,23 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { navigateWithTransition } from "@/lib/navigation";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
   tags: string[];
-  link?: string;
+  slug: string;
   size?: "small" | "medium" | "large";
   isVisible: boolean;
   index: number;
 }
 
-const ProjectCard = ({ title, description, image, tags, link, size = "medium", isVisible, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, image, tags, slug, size = "medium", isVisible, index }: ProjectCardProps) => {
+  const navigate = useNavigate();
+  const location = useLocation();
   return (
     <div 
       className={`group relative overflow-hidden rounded-xl bg-card border border-border hover:border-accent transition-all duration-300 h-full ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
@@ -34,15 +38,15 @@ const ProjectCard = ({ title, description, image, tags, link, size = "medium", i
           ))}
         </div>
       </div>
-      {link && (
-        <a 
-          href={link} 
-          className="absolute inset-0 z-30"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`View ${title} project`}
-        ></a>
-      )}
+      <Link 
+        to={`/projects/${slug}`} 
+        className="absolute inset-0 z-30"
+        aria-label={`View ${title} project`}
+        onClick={(e) => {
+          e.preventDefault();
+          navigateWithTransition(navigate, `/projects/${slug}`, location.pathname);
+        }}
+      ></Link>
     </div>
   );
 };
@@ -74,6 +78,7 @@ const ProjectsPage = () => {
       image: "./Portfolio/Infomedics.png",
       tags: ["Wordpress", "Elementor", "Figma"],
       size: "medium" as const,
+      slug: "infomedics",
     },
     {
       title: "TijdelijkZakelijkInternet",
@@ -81,6 +86,7 @@ const ProjectsPage = () => {
       image: "./Portfolio/TZI.png",
       tags: ["Wordpress", "Elementor", "Figma"],
       size: "small" as const,
+      slug: "tijdelijk-zakelijk-internet",
     },
     {
       title: "Ethical Clothing webshop",
@@ -88,6 +94,7 @@ const ProjectsPage = () => {
       image: "./Portfolio/ethical clothes.png",
       tags: ["Laravel", "PHP", "MySQL"],
       size: "large" as const,
+      slug: "ethical-clothing-webshop",
     },
     {
       title: "Democratic Movie Night",
@@ -95,6 +102,7 @@ const ProjectsPage = () => {
       image: "./Portfolio/Democratische Bioscoop.png",
       tags: ["React", "TypeScript","REST API", "UI/UX"],
       size: "small" as const,
+      slug: "democratic-movie-night",
     },
     {
       title: "Figma App Design",
@@ -102,6 +110,7 @@ const ProjectsPage = () => {
       image: "./Portfolio/Figma festival app.png",
       tags: ["Figma"],
       size: "small" as const,
+      slug: "figma-app-design",
     },
     {
       title: "VTHoflaan",
@@ -109,6 +118,7 @@ const ProjectsPage = () => {
       image: "./Portfolio/Tuin.png",
       tags: ["HTML", "CSS", "JavaScript"],
       size: "medium" as const,
+      slug: "vthoflaan",
     },
     {
       title: "Craft App",
@@ -116,6 +126,7 @@ const ProjectsPage = () => {
       image: "./Portfolio/projectweek.png",
       tags: ["HTML", "CSS", "JavaScript"],
       size: "small" as const,
+      slug: "craft-app",
     },
     {
       title: "Furniture webstore",
@@ -123,6 +134,7 @@ const ProjectsPage = () => {
       image: "./Portfolio/Woonwinkel.png",
       tags: ["React", "NextJS", "TypeScript", "MongoDB & ExpressJS", "Node.js"],
       size: "medium" as const,
+      slug: "furniture-webstore",
     },
     
   ];
@@ -168,6 +180,7 @@ const ProjectsPage = () => {
                       size={project.size}
                       isVisible={isVisible}
                       index={index}
+                      slug={project.slug}
                     />
                   </div>
                 );

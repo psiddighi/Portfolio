@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Laptop, Paintbrush, Camera } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { navigateWithTransition } from "@/lib/navigation";
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -124,7 +125,7 @@ const AboutSection = () => {
                   
                   <Link to="/about" className="font-bold flex items-center hover:text-gray-700 transition-colors group" onClick={(e) => {
                     e.preventDefault();
-                    navigate('/about');
+                    navigateWithTransition(navigate, '/about');
                   }}>
                     Learn More <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
                   </Link>

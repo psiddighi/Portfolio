@@ -13,6 +13,10 @@ import NotFound from "./pages/NotFound";
 import { LoadingBar } from "@/components/ui/loading-bar";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ScrollToTop from "./components/ScrollToTop";
+import { initLenis } from "./lib/lenis";
+import { initBarba } from "./lib/barba";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
+import BlogDetailPage from "./pages/BlogDetailPage";
 
 const queryClient = new QueryClient();
 
@@ -26,34 +30,49 @@ const AppContent = () => {
     return () => clearTimeout(timer);
   }, [location]);
 
+  const namespace = location.pathname === "/" ? "home" : (location.pathname.replace(/^\//, "") || "home");
+
   return (
     <>
       <LoadingBar isLoading={isLoading} />
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <ScrollToTop />
+      <div data-barba="container" data-barba-namespace={namespace}>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogDetailPage />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <ScrollToTop />
+      </div>
     </>
   );
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <Router>
-          <AppContent />
-        </Router>
-      </TooltipProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  useEffect(() => {
+    initLenis();
+    initBarba();
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <div data-barba="wrapper">
+            <Router>
+              <AppContent />
+            </Router>
+          </div>
+        </TooltipProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

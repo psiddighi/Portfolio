@@ -31,12 +31,12 @@ const Hero = () => {
             CRAFTING DIGITAL <br /> PROJECTS
           </h1>
           <div className="mt-2 text-sm md:text-base font-medium text-gray-400">
-            <p className="mb-1 inline-block">🎓 3rd Year Student Software Developer At</p>
+            <p className="mb-1 inline-block">🎓 4th Year Student Software Developer At</p>
             <span className="inline-block">&nbsp;</span>
             <a href="https://www.yonder.nl/" target="_blank" className="text-orange-500 hover:underline inline-block">Yonder</a>
-            <p className="mb-1 inline-block">, (former) Intern At</p>
+            <p className="mb-1 inline-block">, Intern At</p>
             <span className="inline-block">&nbsp;</span>
-            <a href="https://allroundweb.nl/" target="_blank" className="bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text hover:underline inline-block">Allround Web</a>
+            <a href="https://unique-design.nl/" target="_blank" className="text-[#C3AE94] hover:underline inline-block">Unique Design.</a>
           </div>
         </div>
       </div>

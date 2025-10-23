@@ -1,8 +1,10 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { navigateWithTransition } from "@/lib/navigation";
 
 const NotFound = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.error(
@@ -16,9 +18,12 @@ const NotFound = () => {
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">404</h1>
         <p className="text-xl text-muted-foreground mb-4">Oops! Page not found</p>
-        <a href="#/" className="text-accent hover:text-accent/80 underline">
+        <Link to="/" className="text-accent hover:text-accent/80 underline" onClick={(e) => {
+          e.preventDefault();
+          navigateWithTransition(navigate, "/", location.pathname);
+        }}>
           Return to Home
-        </a>
+        </Link>
       </div>
     </div>
   );

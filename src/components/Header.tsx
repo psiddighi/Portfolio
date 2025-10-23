@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/contexts/ThemeContext";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
+import { navigateWithTransition } from "@/lib/navigation";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,7 +30,10 @@ const Header = () => {
       )}
     >
       <div className="flex items-center gap-3 animate-fade-in">
-        <a href="#" className="text-xl font-semibold">P.SIDDIGHI</a>
+        <Link to="/" className="text-xl font-semibold" onClick={(e) => {
+          e.preventDefault();
+          navigateWithTransition(navigate, "/", location.pathname);
+        }}>P.SIDDIGHI</Link>
         <Button 
           variant="ghost" 
           size="icon" 
@@ -56,46 +60,46 @@ const Header = () => {
 
         <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
           <li className="animate-slide-in-top md:animate-slide-in-left" style={{ animationDelay: "100ms" }}>
-            <a 
-              href="/about" 
+            <Link 
+              to="/about"
               className={`hover:text-highlight transition-colors link-underline ${location.pathname === '/about' ? 'text-highlight' : ''}`} 
               onClick={(e) => {
                 e.preventDefault();
                 setIsMenuOpen(false);
-                navigate('/about');
+                navigateWithTransition(navigate, '/about', location.pathname);
               }} 
               style={{ pointerEvents: 'auto' }}
             >
               About
-            </a>
+            </Link>
           </li>
           <li className="animate-slide-in-top md:animate-slide-in-left" style={{ animationDelay: "200ms" }}>
-            <a 
-              href="/blog" 
+            <Link 
+              to="/blog"
               className={`hover:text-highlight transition-colors link-underline ${location.pathname === '/blog' ? 'text-highlight' : ''}`} 
               onClick={(e) => {
                 e.preventDefault();
                 setIsMenuOpen(false);
-                navigate('/blog');
+                navigateWithTransition(navigate, '/blog', location.pathname);
               }} 
               style={{ pointerEvents: 'auto' }}
             >
               Blog
-            </a>
+            </Link>
           </li>
           <li className="animate-slide-in-top md:animate-slide-in-left" style={{ animationDelay: "300ms" }}>
-            <a 
-              href="/projects" 
+            <Link 
+              to="/projects"
               className={`hover:text-highlight transition-colors link-underline ${location.pathname === '/projects' ? 'text-highlight' : ''}`} 
               onClick={(e) => {
                 e.preventDefault();
                 setIsMenuOpen(false);
-                navigate('/projects');
+                navigateWithTransition(navigate, '/projects', location.pathname);
               }} 
               style={{ pointerEvents: 'auto' }}
             >
               Projects
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

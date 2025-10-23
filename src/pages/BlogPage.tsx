@@ -1,16 +1,20 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { navigateWithTransition } from "@/lib/navigation";
 
 interface BlogPostProps {
   title: string;
   date: string;
   isVisible: boolean;
   index: number;
-  link?: string;
+  slug: string;
 }
 
-const BlogPost = ({ title, date, isVisible, index, link }: BlogPostProps) => {
+const BlogPost = ({ title, date, isVisible, index, slug }: BlogPostProps) => {
+  const navigate = useNavigate();
+  const location = useLocation();
   return (
     <div 
       className={`relative border-b border-border py-6 group hover:bg-card hover:border-accent transition-all duration-300 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
@@ -22,13 +26,15 @@ const BlogPost = ({ title, date, isVisible, index, link }: BlogPostProps) => {
           <span className="text-muted-foreground text-sm mt-1 md:mt-0">{date}</span>
         </div>
       </div>
-      {link && (
-        <a 
-          href={link} 
-          className="absolute inset-0 z-10"
-          aria-label={`Read ${title} blog post`}
-        ></a>
-      )}
+      <Link 
+        to={`/blog/${slug}`} 
+        className="absolute inset-0 z-10"
+        aria-label={`Read ${title} blog post`}
+        onClick={(e) => {
+          e.preventDefault();
+          navigateWithTransition(navigate, `/blog/${slug}`, location.pathname);
+        }}
+      ></Link>
     </div>
   );
 };
@@ -57,14 +63,20 @@ const BlogPage = () => {
     {
       title: "Internship Allround Web",
       date: "2024-26-08",
-      link: "/#/blog/internship-allround-web"
-    }
+      slug: "internship-allround-web",
+    },
+    {
+      title: "Graduate Internship Unique Design",
+      date: "2025-26-08",
+      slug: "graduate-internship-unique-design",
+    },
+    // Add future posts here with title, date, and slug
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
       <Header />
-      <main>
+      <main className="flex-1">
         <section className="pt-32 pb-16 px-6 md:px-10 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Blog</h1>
@@ -78,7 +90,7 @@ const BlogPage = () => {
                   key={index}
                   title={post.title}
                   date={post.date}
-                  link={post.link}
+                  slug={post.slug}
                   isVisible={isVisible}
                   index={index}
                 />
