@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => ({
-  base: command === 'build' ? "/style-symphony-sandbox-main/" : "/",
+  base: command === 'build' ? "/Portfolio/" : "/",
   server: {
     host: "::",
     port: 8080,
