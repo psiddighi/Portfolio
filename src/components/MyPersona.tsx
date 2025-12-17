@@ -33,7 +33,7 @@ const MyPersona = () => {
           <div className="bg-white p-4 pb-6 shadow-lg max-w-[280px] transform hover:rotate-[2deg] transition-all duration-300">
             <div className="relative mb-4 overflow-hidden">
               <img 
-                src="/Portfolio/IMG_9658.JPG" 
+                src="./Portfolio/IMG_9658.JPG" 
                 alt="Do 2 work" 
                 className="w-full h-64 object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />
