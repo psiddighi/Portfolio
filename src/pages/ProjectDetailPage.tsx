@@ -96,7 +96,7 @@ const PROJECT_DETAILS: Record<string, ProjectDetailData> = {
     tech: ["WordPress", "ACF", "PHP", "CSS", "JavaScript", "Bootstrap"],
     liveUrl: "https://duarte.unique-development.nl/",
     repoUrl: "https://github.com/Unique-Design-B-V/griff-duarte",
-    images: ["/Portfolio/Screenshot 2025-12-16 at 15.39.43.png", "/Portfolio/Screenshot 2025-12-16 at 15.51.38.png","/Portfolio/Screenshot 2025-12-16 at 15.58.04.png"]
+    images: ["./Portfolio/Screenshot%202025-12-16%20at%2015.39.43.png", "./Portfolio/Screenshot%202025-12-16%20at%2015.51.38.png","./Portfolio/Screenshot%202025-12-16%20at%2015.58.04.png"]
   },
   "garry-panzu": {
     title: "Garry Panzu",
@@ -104,7 +104,7 @@ const PROJECT_DETAILS: Record<string, ProjectDetailData> = {
     tech: ["React", "NextJS", "TypeScript", "JavaScript", "Bootstrap"],
     liveUrl: "https://garrypanzuu.vercel.app/",
     repoUrl: "https://github.com/psiddighi/garrypanzu",
-    images: ["/Portfolio/Screenshot 2025-12-17 at 09.50.06.png", "/Portfolio/Screenshot 2025-12-17 at 09.50.29.png", "/Portfolio/Screenshot 2025-12-17 at 09.50.48.png"]
+    images: ["./Portfolio/Screenshot%202025-12-17%20at%2009.50.06.png", "./Portfolio/Screenshot%202025-12-17%20at%2009.50.29.png", "./Portfolio/Screenshot%202025-12-17%20at%2009.50.48.png"]
   },
   "zzp-kompas": {
     title: "ZZP Kompas",
@@ -112,7 +112,7 @@ const PROJECT_DETAILS: Record<string, ProjectDetailData> = {
     tech: ["React", "NextJS", "TypeScript", "JavaScript", "Bootstrap"],
     liveUrl: "https://zzp-kompasso.vercel.app/",
     repoUrl: "https://github.com/psiddighi/zzp-kompasso",
-    images: ["/Portfolio/Screenshot 2025-12-17 at 10.59.26.png", "/Portfolio/Screenshot 2025-12-17 at 10.58.53.png", "/Portfolio/Screenshot 2025-12-17 at 10.59.08.png"]
+    images: ["./Portfolio/Screenshot%202025-12-17%20at%2010.59.26.png", "./Portfolio/Screenshot%202025-12-17%20at%2010.58.53.png", "./Portfolio/Screenshot%202025-12-17%20at%2010.59.08.png"]
   },
 };
 

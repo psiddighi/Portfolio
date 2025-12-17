@@ -123,7 +123,7 @@ const ProjectsPage = () => {
     {
       title: "Griff Duarte",
       description: "WordPress website for a Portuguese law firm built with ACF, WordPress and custom styling",
-      image: "/Portfolio/Screenshot 2025-12-16 at 15.39.43.png",
+      image: "./Portfolio/Screenshot%202025-12-16%20at%2015.39.43.png",
       tags: ["Wordpress", "ACF", "PHP", "CSS", "JavaScript", "Bootstrap"],
       size: "small" as const,
       slug: "griff-duarte",
@@ -131,7 +131,7 @@ const ProjectsPage = () => {
         {
       title: "Garry Panzu",
       description: "Portfolio site for a client to showcase his cooking abilities and experience as a chef",
-      image: "/Portfolio/Screenshot 2025-12-17 at 09.50.06.png",
+      image: "./Portfolio/Screenshot%202025-12-17%20at%2009.50.06.png",
       tags: ["React", "NextJS", "TypeScript", "JavaScript", "Bootstrap"],
       size: "medium" as const,
       slug: "garry-panzu",
@@ -139,7 +139,7 @@ const ProjectsPage = () => {
     {
       title: "ZZP Kompas",
       description: "A digital solution for entrepreneurs who want to gain insight or assistance about their financial situation ",
-      image: "/Portfolio/Screenshot 2025-12-17 at 10.58.40.png",
+      image: "./Portfolio/Screenshot%202025-12-17%20at%2010.58.40.png",
       tags: ["React", "NextJS", "TypeScript", "JavaScript", "Bootstrap"],
       size: "medium" as const,
       slug: "zzp-kompas",
