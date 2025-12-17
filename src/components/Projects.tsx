@@ -90,7 +90,7 @@ const Projects = () => {
             subtitle="Live Lofi-Music webapp"
             description="Webpage/webapp for playing lofi music, with a visually pleasing interface"
             isVisible={isVisible}
-            url="#"
+            url="https://psiddighi.github.io/Lofi-Spin/"
           />
         </div>
         
