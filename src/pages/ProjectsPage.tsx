@@ -30,7 +30,7 @@ const ProjectCard = ({ title, description, image, tags, slug, size = "medium", i
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-90"
       />
       <div className="absolute bottom-0 left-0 right-0 p-4 z-20 transform transition-transform duration-300 group-hover:translate-y-0">
-        <h3 className="text-xl font-bold mb-2 text-foreground">{title}</h3>
+        <h3 className="text-xl font-bold mb-2 text-foreground title-drop-shadow">{title}</h3>
         <p className="text-sm text-muted-foreground mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{description}</p>
         <div className="flex flex-wrap gap-2 mt-2">
           {tags.map((tag, index) => (
@@ -105,28 +105,12 @@ const ProjectsPage = () => {
       slug: "democratic-movie-night",
     },
     {
-      title: "Figma App Design",
-      description: "A Figma app design for a festival assignment",
-      image: "./Portfolio/Figma festival app.png",
-      tags: ["Figma"],
-      size: "small" as const,
-      slug: "figma-app-design",
-    },
-    {
       title: "VTHoflaan",
       description: "A simple static website for an allotment garden association to display information and news rubrics",
       image: "./Portfolio/Tuin.png",
       tags: ["HTML", "CSS", "JavaScript"],
       size: "medium" as const,
       slug: "vthoflaan",
-    },
-    {
-      title: "Craft App",
-      description: "A webapp for a campagne against food waste (school project)",
-      image: "./Portfolio/projectweek.png",
-      tags: ["HTML", "CSS", "JavaScript"],
-      size: "small" as const,
-      slug: "craft-app",
     },
     {
       title: "Furniture webstore",
@@ -136,7 +120,30 @@ const ProjectsPage = () => {
       size: "medium" as const,
       slug: "furniture-webstore",
     },
-    
+    {
+      title: "Griff Duarte",
+      description: "WordPress website for a Portuguese law firm built with ACF, WordPress and custom styling",
+      image: "/Portfolio/Screenshot 2025-12-16 at 15.39.43.png",
+      tags: ["Wordpress", "ACF", "PHP", "CSS", "JavaScript", "Bootstrap"],
+      size: "small" as const,
+      slug: "griff-duarte",
+    },
+        {
+      title: "Garry Panzu",
+      description: "Portfolio site for a client to showcase his cooking abilities and experience as a chef",
+      image: "/Portfolio/Screenshot 2025-12-17 at 09.50.06.png",
+      tags: ["React", "NextJS", "TypeScript", "JavaScript", "Bootstrap"],
+      size: "medium" as const,
+      slug: "garry-panzu",
+    },
+    {
+      title: "ZZP Kompas",
+      description: "A digital solution for entrepreneurs who want to gain insight or assistance about their financial situation ",
+      image: "/Portfolio/Screenshot 2025-12-17 at 10.58.40.png",
+      tags: ["React", "NextJS", "TypeScript", "JavaScript", "Bootstrap"],
+      size: "medium" as const,
+      slug: "zzp-kompas",
+    }
   ];
 
   return (
@@ -168,7 +175,7 @@ const ProjectsPage = () => {
                 // Third row
                 else if (index === 6) gridClass = "col-span-6 md:col-span-2 lg:col-span-3"; // Small project
                 else if (index === 7) gridClass = "col-span-6 md:col-span-2 lg:col-span-3"; // Small project
-                else if (index === 8) gridClass = "col-span-6 md:col-span-2 lg:col-span-6"; // Medium project
+                else if (index === 8) gridClass = "col-span-6 md:col-span-2 lg:col-span-3"; // Small project
                 
                 return (
                   <div key={index} className={`${gridClass} ${project.size === "large" ? "row-span-2" : project.size === "small" ? "" : "row-span-1"}`}>

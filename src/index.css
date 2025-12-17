@@ -154,3 +154,6 @@
   from { opacity: 1; }
   to { opacity: 0; }
 }
+.title-drop-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 6px 16px rgba(0, 0, 0, 0.5);
+}

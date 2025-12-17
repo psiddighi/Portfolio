@@ -3,6 +3,20 @@ import Footer from "@/components/Footer";
 import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { Github, ExternalLink } from "lucide-react";
 import { navigateWithTransition } from "@/lib/navigation";
+import { useState, useEffect } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogOverlay,
+} from "@/components/ui/dialog";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 interface ProjectDetailData {
   title: string;
@@ -20,11 +34,7 @@ const PROJECT_DETAILS: Record<string, ProjectDetailData> = {
     tech: ["WordPress", "Elementor Pro", "Figma"],
     liveUrl: "#",
     repoUrl: "#",
-    images: [
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg"
-    ]
+    images: ["./Portfolio/Infomedics.png"]
   },
   "tijdelijk-zakelijk-internet": {
     title: "Tijdelijk Zakelijk Internet",
@@ -32,7 +42,7 @@ const PROJECT_DETAILS: Record<string, ProjectDetailData> = {
     tech: ["WordPress", "Elementor", "Figma"],
     liveUrl: "#",
     repoUrl: "#",
-    images: ["/placeholder.svg", "/placeholder.svg"]
+    images: ["./Portfolio/TZI.png"]
   },
   "ethical-clothing-webshop": {
     title: "Ethical Clothing Webshop",
@@ -60,9 +70,9 @@ const PROJECT_DETAILS: Record<string, ProjectDetailData> = {
     title: "VTHoflaan",
     description: "Static website for an allotment garden association.",
     tech: ["HTML", "CSS", "JavaScript"],
-    liveUrl: "#",
-    repoUrl: "#",
-    images: ["/placeholder.svg"]
+    liveUrl: "https://vthoflaan.nl/",
+    repoUrl: "https://github.com/psiddighi/vthoflaan",
+    images: ["/Portfolio/Tuin.png", "/Portfolio/Screenshot 2025-12-17 at 10.09.00.png", "/Portfolio/Screenshot 2025-12-17 at 10.11.11.png"]
   },
   "craft-app": {
     title: "Craft App",
@@ -80,14 +90,47 @@ const PROJECT_DETAILS: Record<string, ProjectDetailData> = {
     repoUrl: "#",
     images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"]
   },
+  "griff-duarte": {
+    title: "Griff Duarte",
+    description: "WordPress website for a Portuguese law firm, with a refined UI using ACF custom components and a custom WordPress theme.",
+    tech: ["WordPress", "ACF", "PHP", "CSS", "JavaScript", "Bootstrap"],
+    liveUrl: "https://duarte.unique-development.nl/",
+    repoUrl: "https://github.com/Unique-Design-B-V/griff-duarte",
+    images: ["/Portfolio/Screenshot 2025-12-16 at 15.39.43.png", "/Portfolio/Screenshot 2025-12-16 at 15.51.38.png","/Portfolio/Screenshot 2025-12-16 at 15.58.04.png"]
+  },
+  "garry-panzu": {
+    title: "Garry Panzu",
+    description: "Portfolio site for a client to showcase his cooking abilities and experience as a chef.",
+    tech: ["React", "NextJS", "TypeScript", "JavaScript", "Bootstrap"],
+    liveUrl: "https://garrypanzuu.vercel.app/",
+    repoUrl: "https://github.com/psiddighi/garrypanzu",
+    images: ["/Portfolio/Screenshot 2025-12-17 at 09.50.06.png", "/Portfolio/Screenshot 2025-12-17 at 09.50.29.png", "/Portfolio/Screenshot 2025-12-17 at 09.50.48.png"]
+  },
+  "zzp-kompas": {
+    title: "ZZP Kompas",
+    description: "A digital solution for entrepreneurs seeking insight into or assistance with their financial situation. This project was part of the Yonder Challenge Week, a week-long event where legal students and developers collaborated to develop solutions for the challenges of three real-world companies.",
+    tech: ["React", "NextJS", "TypeScript", "JavaScript", "Bootstrap"],
+    liveUrl: "https://zzp-kompasso.vercel.app/",
+    repoUrl: "https://github.com/psiddighi/zzp-kompasso",
+    images: ["/Portfolio/Screenshot 2025-12-17 at 10.59.26.png", "/Portfolio/Screenshot 2025-12-17 at 10.58.53.png", "/Portfolio/Screenshot 2025-12-17 at 10.59.08.png"]
+  },
 };
 
 const ProjectDetailPage = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
 
   const data = slug ? PROJECT_DETAILS[slug] : undefined;
+
+  useEffect(() => {
+    if (lightboxOpen && carouselApi) {
+      carouselApi.scrollTo(activeIndex);
+    }
+  }, [lightboxOpen, activeIndex, carouselApi]);
 
   if (!data) {
     return (
@@ -139,11 +182,63 @@ const ProjectDetailPage = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.images.map((src, i) => (
-              <div key={i} className="rounded-lg overflow-hidden border border-border bg-card">
-                <img src={src} alt={`${data.title} screenshot ${i + 1}`} className="w-full h-48 object-cover" />
+              <div
+                key={i}
+                className="rounded-lg overflow-hidden border border-border bg-card cursor-zoom-in"
+                role="button"
+                tabIndex={0}
+                onClick={() => {
+                  setActiveIndex(i);
+                  setLightboxOpen(true);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setActiveIndex(i);
+                    setLightboxOpen(true);
+                  }
+                }}
+              >
+                <img
+                  src={src}
+                  alt={`${data.title} screenshot ${i + 1}`}
+                  className="w-full h-48 object-cover"
+                />
               </div>
             ))}
           </div>
+
+          <Dialog
+            open={lightboxOpen}
+            onOpenChange={(open) => {
+              setLightboxOpen(open);
+            }}
+          >
+            <DialogOverlay />
+            <DialogContent className="max-w-6xl w-[92vw] p-0 bg-transparent border-none shadow-none">
+              <Carousel
+                opts={{ startIndex: activeIndex }}
+                setApi={(api) => {
+                  setCarouselApi(api);
+                }}
+                className="w-full"
+              >
+                <CarouselContent>
+                  {data.images.map((src, idx) => (
+                    <CarouselItem key={idx} className="flex items-center justify-center">
+                      <img
+                        src={src}
+                        alt={`${data.title} screenshot ${idx + 1}`}
+                        className="max-h-[80vh] w-auto object-contain"
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-4 top-1/2 -translate-y-1/2 bg-background/60 backdrop-blur-sm" />
+                <CarouselNext className="right-4 top-1/2 -translate-y-1/2 bg-background/60 backdrop-blur-sm" />
+              </Carousel>
+            </DialogContent>
+          </Dialog>
         </div>
       </main>
       <Footer />

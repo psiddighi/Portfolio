@@ -87,6 +87,20 @@ const Header = () => {
               Blog
             </Link>
           </li>
+          <li className="animate-slide-in-top md:animate-slide-in-left" style={{ animationDelay: "250ms" }}>
+            <Link 
+              to="/services"
+              className={`hover:text-highlight transition-colors link-underline ${location.pathname === '/services' ? 'text-highlight' : ''}`} 
+              onClick={(e) => {
+                e.preventDefault();
+                setIsMenuOpen(false);
+                navigateWithTransition(navigate, '/services', location.pathname);
+              }} 
+              style={{ pointerEvents: 'auto' }}
+            >
+              Services
+            </Link>
+          </li>
           <li className="animate-slide-in-top md:animate-slide-in-left" style={{ animationDelay: "300ms" }}>
             <Link 
               to="/projects"

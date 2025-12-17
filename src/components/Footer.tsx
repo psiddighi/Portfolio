@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground mb-4 md:mb-0">
-            2025©Parsa Siddighi
+            2026©Parsa Siddighi
           </p>
           
           <div className="flex space-x-4">

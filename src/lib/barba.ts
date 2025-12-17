@@ -7,7 +7,6 @@ export function initBarba() {
   initialized = true;
 
   barba.init({
-    // Disable prefetch to keep things simple in SPA
     prefetch: false,
     transitions: [
       {

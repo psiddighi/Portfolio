@@ -12,31 +12,19 @@ interface BlogDetailData {
 const BLOG_DETAILS: Record<string, BlogDetailData> = {
   "internship-allround-web": {
     title: "Internship: Allround Web",
-    subtitle: "From learning to building in the real world",
-    text: `I still remember the quiet hum of the office air conditioning on my first day. Everything felt new — the tools, the pace, the simple but undeniable rhythm of working on something real that would be seen and used by actual people. 
+    subtitle: "The first real-world web development internship working in a team, specialized in my work area",
+    text: `This was my very first internship in my third year. During this internship, I spent six months working full-time on clients and websites for Allround Web in Goirle.
 
-During my internship I got the chance to move beyond tutorials and into decisions. Tiny ones, like padding values and subtle hover states. Bigger ones, like whether a layout should communicate trust or energy. And the biggest ones — how to work with a team, how to ask better questions, and how to throw away code when a cleaner path becomes obvious. 
+I passed all my exams and had the opportunity to successfully complete my third-year internship with positive feedback.
 
-Some moments stood out. The first time something I designed went live. The first time I broke something and had to calmly, carefully un-break it. The first time I felt the quiet satisfaction that comes from solving a UI problem so clearly that you almost forget there was ever a problem in the first place. 
-
-This wasn’t just about web development. It was about seeing a product from someone else’s perspective, about learning how copy, color, spacing, and motion combine into a feeling. It was about the slow shift from trying to be right to trying to be helpful. And it was about building things that make sense — to the client, to the user, and to the team who’ll maintain it after you. 
-
-By the end, I was no longer just following patterns — I was choosing them. I started writing smaller components, naming things with care, and leaving code a little cleaner than I found it. It’s a quiet kind of craft, and this internship helped me fall in love with it.`,
+During this internship, I focused on creating front-end websites using plugins and builders, particularly Elementor, ACF, Gravity Forms, and custom code in the site's theme files.`,
   },
   "graduate-internship-unique-design": {
     title: "Graduate Internship Unique Design",
-    subtitle: "Designing a distinctive graduation project, end-to-end",
-    text: `When I began the graduate internship, I promised myself I would design something that felt unmistakably mine — a project that balanced clarity with character.
+    subtitle: "the end-of-year internship on the way to my MBO 4 diploma",
+    text: `This is the full-time internship I'm still working on. In September, I started the internship with a classmate at Unique Design. Unique Design is a full-time web agency specializing in creating custom WordPress websites, custom themes, custom plugins, and servers.
 
-I started with research: not just competitive analysis, but conversations. What do people expect? What do they actually want to feel? I sketched, iterated, and deleted without ceremony. The best ideas rarely survive their first honest critique.
-
-The uniqueness wasn’t in flashy elements. It was a series of subtle decisions — spacing that invites calm, motion that respects attention, typography that serves the content rather than performing for it. I leaned into patterns that feel familiar but refined, and let contrast carry the story.
-
-One afternoon, the design clicked. I replaced a noisy layout with a focused structure, simplified navigation, and introduced a bold but grounded accent. It finally felt like it had a voice.
-
-From there, detail work took over. Micro-interactions, state transitions, empty states that didn’t feel like dead ends. I refined component names and created variations that wouldn’t make future developers guess.
-
-By the end, it wasn’t just a design — it was an experience with a clear personality. It knew what to say and when to be quiet. And that’s what made it unique.`,
+We're now a small team of colleagues in a beautiful office in Tilburg, working together to create projects and solutions for a regular set of returning clients. During this internship, I'm getting the chance to delve into custom WordPress theme and plugin development. Along with a colleague of mine, we often collaborate to deliver visually and technically excellent work for our custom projects.`,
   },
 };
 

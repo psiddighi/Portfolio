@@ -70,8 +70,13 @@ const BlogPage = () => {
       date: "2025-26-08",
       slug: "graduate-internship-unique-design",
     },
-    // Add future posts here with title, date, and slug
   ];
+
+  const parseDate = (d: string) => {
+    const [year, day, month] = d.split("-").map(Number);
+    return new Date(year, (month ?? 1) - 1, day ?? 1).getTime();
+  };
+  const sortedPosts = [...blogPosts].sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
@@ -85,7 +90,7 @@ const BlogPage = () => {
             </p>
             
             <div id="blog-list" className="relative">
-              {blogPosts.map((post, index) => (
+              {sortedPosts.map((post, index) => (
                 <BlogPost 
                   key={index}
                   title={post.title}

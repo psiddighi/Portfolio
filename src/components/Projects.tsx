@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const ProjectCard = ({ number, title, subtitle, description, isVisible }) => {
+const ProjectCard = ({ number, title, subtitle, description, isVisible, url }) => {
   return (
     <div 
-      className={`border border-border rounded-lg overflow-hidden hover:border-muted-foreground transition-all cursor-pointer card-hover ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} 
+      className={`relative border border-border rounded-lg overflow-hidden hover:border-muted-foreground transition-all cursor-pointer card-hover ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} 
       style={{ animationDelay: `${Number(number) * 100}ms` }}
     >
       <div className="p-6">
@@ -13,6 +13,15 @@ const ProjectCard = ({ number, title, subtitle, description, isVisible }) => {
         <h4 className="text-lg text-muted-foreground mb-4">{subtitle}</h4>
         <p className="text-sm text-muted-foreground">{description}</p>
       </div>
+      {url && (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute inset-0 z-10"
+          aria-label={`Open ${title} in a new tab`}
+        />
+      )}
     </div>
   );
 };
@@ -59,26 +68,29 @@ const Projects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <ProjectCard 
             number="01" 
-            title="Ethical Webshop Clothing Store" 
-            subtitle="Clothing Store"
-            description="A webshop for ethical clothes made in my first Laravel project"
+            title="Griff Duarte" 
+            subtitle="Law firm website"
+            description="A fully custom built WordPress website for a law firm"
             isVisible={isVisible}
+            url="https://duarte.unique-development.nl/"
           />
           
           <ProjectCard 
             number="02" 
-            title="Fitness App Design & Mockup" 
-            subtitle="Mockup"
-            description="Fitness app mockup for an app design project in Figma"
+            title="VTHoflaan" 
+            subtitle="Custom website"
+            description="Custom built website for a garden allotment using HTML, CSS & JavaScript"
             isVisible={isVisible}
+            url="https://vthoflaan.nl/"
           />
           
           <ProjectCard 
             number="03" 
-            title="Animated Interactive Webpage" 
-            subtitle="Webpage"
-            description="A webpage designed with lots of animations and illustrations"
+            title="Lofi Spin" 
+            subtitle="Live Lofi-Music webapp"
+            description="Webpage/webapp for playing lofi music, with a visually pleasing interface"
             isVisible={isVisible}
+            url="#"
           />
         </div>
         
