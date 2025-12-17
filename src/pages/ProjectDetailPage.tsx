@@ -72,7 +72,7 @@ const PROJECT_DETAILS: Record<string, ProjectDetailData> = {
     tech: ["HTML", "CSS", "JavaScript"],
     liveUrl: "https://vthoflaan.nl/",
     repoUrl: "https://github.com/psiddighi/vthoflaan",
-    images: ["/Portfolio/Tuin.png", "/Portfolio/Screenshot 2025-12-17 at 10.09.00.png", "/Portfolio/Screenshot 2025-12-17 at 10.11.11.png"]
+    images: ["./Portfolio/Tuin.png", "./Portfolio/Screenshot%202025-12-17%20at%2010.09.00.png", "./Portfolio/Screenshot%202025-12-17%20at%2010.11.11.png"]
   },
   "craft-app": {
     title: "Craft App",
