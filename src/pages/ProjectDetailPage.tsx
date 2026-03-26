@@ -32,7 +32,7 @@ const PROJECT_DETAILS: Record<string, ProjectDetailData> = {
     title: "Infomedics",
     description: "WordPress site built during internship for a medical clinic, using Elementor Pro and Figma.",
     tech: ["WordPress", "Elementor Pro", "Figma"],
-    liveUrl: "#",
+    liveUrl: "https://www.frompaidtopartner.nl/",
     repoUrl: "#",
     images: ["./Portfolio/Infomedics.png"]
   },
