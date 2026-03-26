@@ -34,9 +34,6 @@ const Hero = () => {
             <p className="mb-1 inline-block">🎓 4th Year Student Software Developer At</p>
             <span className="inline-block">&nbsp;</span>
             <a href="https://www.yonder.nl/" target="_blank" className="text-orange-500 hover:underline inline-block">Yonder</a>
-            <p className="mb-1 inline-block">, Intern At</p>
-            <span className="inline-block">&nbsp;</span>
-            <a href="https://unique-design.nl/" target="_blank" className="text-[#C3AE94] hover:underline inline-block">Unique Design.</a>
           </div>
         </div>
       </div>
