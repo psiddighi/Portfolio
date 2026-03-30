@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { navigateWithTransition } from "@/lib/navigation";
 
 const ProjectCard = ({ number, title, subtitle, description, isVisible, url }) => {
   return (
@@ -28,6 +29,8 @@ const ProjectCard = ({ number, title, subtitle, description, isVisible, url }) =
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -58,7 +61,7 @@ const Projects = () => {
             SOME OF MY RECENT<br />WORKPIECES
           </h1>
           <button 
-            onClick={() => window.location.href = '/#/projects'} 
+            onClick={() => navigateWithTransition(navigate, "/projects", location.pathname)}
             className="hidden md:block text-foreground hover:text-highlight transition-colors"
           >
             See More
@@ -96,7 +99,7 @@ const Projects = () => {
         
         <div className="mt-8 text-center md:hidden">
           <button 
-            onClick={() => window.location.href = '/#/projects'} 
+            onClick={() => navigateWithTransition(navigate, "/projects", location.pathname)}
             className="text-foreground hover:text-highlight transition-colors"
           >
             See More
