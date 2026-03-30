@@ -66,9 +66,9 @@ const BlogPage = () => {
       slug: "internship-allround-web",
     },
     {
-      title: "Graduate Internship Unique Design",
+      title: "Internship: Unique Design",
       date: "2025-26-08",
-      slug: "graduate-internship-unique-design",
+      slug: "internship-unique-design",
     },
   ];
 
