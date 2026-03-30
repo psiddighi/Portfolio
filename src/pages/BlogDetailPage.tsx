@@ -20,7 +20,7 @@ I passed all my exams and had the opportunity to successfully complete my third-
 During this internship, I focused on creating front-end websites using plugins and builders, particularly Elementor, ACF, Gravity Forms, and custom code in the site's theme files.`,
   },
   "internship-unique-design": {
-    title: "Internship Unique Design",
+    title: "Graduate Internship Unique Design",
     subtitle: "the end-of-year internship on the way to my MBO 4 diploma",
     text: `This is the full-time internship I'm still working on. In September, I started the internship with a classmate at Unique Design. Unique Design is a full-time web agency specializing in creating custom WordPress websites, custom themes, custom plugins, and servers.
 
@@ -54,7 +54,7 @@ const BlogDetailPage = () => {
     );
   }
 
-  return (
+  return (graduate-
     <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
       <Header />
       <main className="flex-1 pt-28 pb-16 px-6 md:px-10 lg:px-16">
