@@ -44,22 +44,6 @@ const PROJECT_DETAILS: Record<string, ProjectDetailData> = {
     repoUrl: "#",
     images: ["./Portfolio/TZI.png"]
   },
-  "ethical-clothing-webshop": {
-    title: "Ethical Clothing Webshop",
-    description: "Laravel webshop with MySQL backend and PHP controllers.",
-    tech: ["Laravel", "PHP", "MySQL"],
-    liveUrl: "#",
-    repoUrl: "#",
-    images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"]
-  },
-  "democratic-movie-night": {
-    title: "Democratic Movie Night",
-    description: "Web app to vote for movies democratically.",
-    tech: ["React", "TypeScript", "REST API", "UI/UX"],
-    liveUrl: "#",
-    repoUrl: "#",
-    images: ["/placeholder.svg", "/placeholder.svg"]
-  },
   "figma-app-design": {
     title: "Figma App Design",
     description: "App UI design for festival assignment.",
@@ -81,14 +65,6 @@ const PROJECT_DETAILS: Record<string, ProjectDetailData> = {
     liveUrl: "#",
     repoUrl: "#",
     images: ["/placeholder.svg", "/placeholder.svg"]
-  },
-  "furniture-webstore": {
-    title: "Furniture Webstore",
-    description: "MERN stack webstore project.",
-    tech: ["React", "NextJS", "TypeScript", "MongoDB", "Express", "Node.js"],
-    liveUrl: "#",
-    repoUrl: "#",
-    images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"]
   },
   "griff-duarte": {
     title: "Griff Duarte",
@@ -113,6 +89,22 @@ const PROJECT_DETAILS: Record<string, ProjectDetailData> = {
     liveUrl: "https://zzp-kompasso.vercel.app/",
     repoUrl: "https://github.com/psiddighi/zzp-kompasso",
     images: ["./Portfolio/Screenshot%202025-12-17%20at%2010.59.26.png", "./Portfolio/Screenshot%202025-12-17%20at%2010.58.53.png", "./Portfolio/Screenshot%202025-12-17%20at%2010.59.08.png"]
+  },
+  "lofi-spin": {
+    title: "Lofi Spin",
+    description: "Webpage/webapp for playing lofi music, with a visually pleasing interface.",
+    tech: ["React", "Mongo", "Express", "VueJS", "NextJS", "Material UI", "shadcn/ui"],
+    liveUrl: "https://psiddighi.github.io/Lofi-Spin/",
+    repoUrl: "https://github.com/psiddighi/lofi-app-2",
+    images: ["./Portfolio/lofi-spin-1.png", "./Portfolio/lofi-spin-2.png"]
+  },
+  "new-project": {
+    title: "Travelbugdesign",
+    description: "Custom Wordpress theme for blogging.",
+    tech: ["WordPress", "PHP", "Barba.js", "LenisJS", "React"],
+    liveUrl: "https://travelbugdesign.com/",
+    repoUrl: "https://github.com/psiddighi/Custom-WP-blog-site",
+    images: ["./Portfolio/travelbug1.png", "./Portfolio/travelbug2.png", "./Portfolio/travelbug3.png"]
   },
 };
 

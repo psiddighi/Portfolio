@@ -89,20 +89,20 @@ const ProjectsPage = () => {
       slug: "tijdelijk-zakelijk-internet",
     },
     {
-      title: "Ethical Clothing webshop",
-      description: "My first Laravel project for a webshop that sells ethical clothing with a fully functional MySQL database and PHP back-end",
-      image: "./Portfolio/ethical clothes.png",
-      tags: ["Laravel", "PHP", "MySQL"],
-      size: "large" as const,
-      slug: "ethical-clothing-webshop",
+      title: "Garry Panzu",
+      description: "Portfolio site for a client to showcase his cooking abilities and experience as a chef",
+      image: "./Portfolio/Screenshot%202025-12-17%20at%2009.50.06.png",
+      tags: ["React", "NextJS", "TypeScript", "JavaScript", "Bootstrap"],
+      size: "medium" as const,
+      slug: "garry-panzu",
     },
     {
-      title: "Democratic Movie Night",
-      description: "A web application for democratic movie nights where you can vote for what movie to watch",
-      image: "./Portfolio/Democratische Bioscoop.png",
-      tags: ["React", "TypeScript","REST API", "UI/UX"],
+      title: "Griff Duarte",
+      description: "WordPress website for a Portuguese law firm built with ACF, WordPress and custom styling",
+      image: "./Portfolio/Screenshot%202025-12-16%20at%2015.39.43.png",
+      tags: ["Wordpress", "ACF", "PHP", "CSS", "JavaScript", "Bootstrap"],
       size: "small" as const,
-      slug: "democratic-movie-night",
+      slug: "griff-duarte",
     },
     {
       title: "VTHoflaan",
@@ -113,37 +113,29 @@ const ProjectsPage = () => {
       slug: "vthoflaan",
     },
     {
-      title: "Furniture webstore",
-      description: "First fully functional MERN full-stack web application for a furniture webshop school project",
-      image: "./Portfolio/Woonwinkel.png",
-      tags: ["React", "NextJS", "TypeScript", "MongoDB & ExpressJS", "Node.js"],
-      size: "medium" as const,
-      slug: "furniture-webstore",
-    },
-    {
-      title: "Griff Duarte",
-      description: "WordPress website for a Portuguese law firm built with ACF, WordPress and custom styling",
-      image: "./Portfolio/Screenshot%202025-12-16%20at%2015.39.43.png",
-      tags: ["Wordpress", "ACF", "PHP", "CSS", "JavaScript", "Bootstrap"],
-      size: "small" as const,
-      slug: "griff-duarte",
-    },
-        {
-      title: "Garry Panzu",
-      description: "Portfolio site for a client to showcase his cooking abilities and experience as a chef",
-      image: "./Portfolio/Screenshot%202025-12-17%20at%2009.50.06.png",
-      tags: ["React", "NextJS", "TypeScript", "JavaScript", "Bootstrap"],
-      size: "medium" as const,
-      slug: "garry-panzu",
-    },
-    {
       title: "ZZP Kompas",
       description: "A digital solution for entrepreneurs who want to gain insight or assistance about their financial situation ",
       image: "./Portfolio/Screenshot%202025-12-17%20at%2010.58.40.png",
       tags: ["React", "NextJS", "TypeScript", "JavaScript", "Bootstrap"],
       size: "medium" as const,
       slug: "zzp-kompas",
-    }
+    },
+    {
+      title: "Lofi Spin",
+      description: "Webpage/webapp for playing lofi music, with a visually pleasing interface",
+      image: "./Portfolio/lofi-spin-1.png",
+      tags: ["React", "Mongo", "Express", "VueJS", "NextJS", "Material UI", "shadcn/ui"],
+      size: "small" as const,
+      slug: "lofi-spin",
+    },
+    {
+      title: "Travelbugdesign",
+      description: "Custom Wordpress theme for blogging.",
+      image: "./Portfolio/TravelBugDesing-Icon-Transparent1x.webp",
+      tags: ["WordPress", "PHP", "Barba.js", "LenisJS", "React"],
+      size: "small" as const,
+      slug: "new-project",
+    },
   ];
 
   return (
@@ -162,23 +154,17 @@ const ProjectsPage = () => {
                 // Define custom grid positions for specific projects to create a bento layout
                 let gridClass = "";
                 
-                // First row
-                if (index === 0) gridClass = "col-span-6 row-span-2 md:col-span-4 lg:col-span-6"; // Large feature project
-                else if (index === 1) gridClass = "col-span-6 md:col-span-2 lg:col-span-3"; // Small project
-                else if (index === 2) gridClass = "col-span-6 md:col-span-3 lg:col-span-3"; // Medium project
-                
-                // Second row
-                else if (index === 3) gridClass = "col-span-6 md:col-span-3 lg:col-span-3"; // Small project
-                else if (index === 4) gridClass = "col-span-6 row-span-2 md:col-span-3 lg:col-span-5"; // Medium project
-                else if (index === 5) gridClass = "col-span-6 md:col-span-3 lg:col-span-4"; // Medium project
-                
-                // Third row
-                else if (index === 6) gridClass = "col-span-6 md:col-span-2 lg:col-span-3"; // Small project
-                else if (index === 7) gridClass = "col-span-6 md:col-span-2 lg:col-span-3"; // Small project
-                else if (index === 8) gridClass = "col-span-6 md:col-span-2 lg:col-span-3"; // Small project
+                if (index === 0) gridClass = "col-span-1 md:col-span-6 lg:col-span-6";
+                else if (index === 1) gridClass = "col-span-1 md:col-span-3 lg:col-span-3";
+                else if (index === 2) gridClass = "col-span-1 md:col-span-3 lg:col-span-3";
+                else if (index === 3) gridClass = "col-span-1 md:col-span-3 lg:col-span-3";
+                else if (index === 4) gridClass = "col-span-1 md:col-span-3 lg:col-span-3";
+                else if (index === 5) gridClass = "col-span-1 md:col-span-6 lg:col-span-6";
+                else if (index === 6) gridClass = "col-span-1 md:col-span-3 lg:col-span-6";
+                else if (index === 7) gridClass = "col-span-1 md:col-span-3 lg:col-span-6";
                 
                 return (
-                  <div key={index} className={`${gridClass} ${project.size === "large" ? "row-span-2" : project.size === "small" ? "" : "row-span-1"}`}>
+                  <div key={index} className={gridClass}>
                     <ProjectCard 
                       title={project.title}
                       description={project.description}

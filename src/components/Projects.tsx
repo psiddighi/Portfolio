@@ -80,11 +80,11 @@ const Projects = () => {
           
           <ProjectCard 
             number="02" 
-            title="VTHoflaan" 
-            subtitle="Custom website"
-            description="Custom built website for a garden allotment using HTML, CSS & JavaScript"
+            title="Travelbugdesign" 
+            subtitle="Custom WordPress theme"
+            description="Custom Wordpress theme for blogging."
             isVisible={isVisible}
-            url="https://vthoflaan.nl/"
+            url="https://travelbugdesign.com/"
           />
           
           <ProjectCard 
