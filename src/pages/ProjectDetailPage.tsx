@@ -118,6 +118,8 @@ const PROJECT_DETAILS: Record<string, ProjectDetailData> = {
       "Design: Figma",
       "Version control: Git + GitHub"
     ],
+    liveUrl: "https://ai-taalcoach-demo.vercel.app/",
+    repoUrl: "https://github.com/Team-Education-Futures-Lab/AI-Language-coach-NT-2-Students",
     images: [
       "./Portfolio/Screenshot%202026-11-03%20at%2015-16-12%20AI%20Taalcoach%20%C2%B7%20Op%20jouw%20tempo.png",
       "./Portfolio/Screenshot%202026-11-03%20at%2015-17-36%20AI%20Taalcoach%20%C2%B7%20Op%20jouw%20tempo.png"
