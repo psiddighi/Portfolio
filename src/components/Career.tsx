@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Career = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isHeadingVisible, setIsHeadingVisible] = useState(false);
+  const [typedTitle, setTypedTitle] = useState('');
+  const headingRef = useRef<HTMLHeadingElement | null>(null);
+  const title = 'Career';
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -20,10 +24,51 @@ const Career = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsHeadingVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.45 }
+    );
+
+    const element = headingRef.current;
+    if (element) observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isHeadingVisible) return;
+
+    let index = 0;
+    setTypedTitle('');
+
+    const typingTimer = window.setInterval(() => {
+      index += 1;
+      setTypedTitle(title.slice(0, index));
+
+      if (index >= title.length) {
+        window.clearInterval(typingTimer);
+      }
+    }, 95);
+
+    return () => window.clearInterval(typingTimer);
+  }, [isHeadingVisible]);
+
   return (
     <section id="career-section" className="py-16 px-6 md:px-10 lg:px-16 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl font-bold mb-8">Career</h2>
+        <h2
+          ref={headingRef}
+          className={`typing-heading from-left text-5xl font-bold mb-8 ${isHeadingVisible ? 'is-visible' : ''}`}
+        >
+          <span>{typedTitle}</span>
+          <span className="typing-caret" aria-hidden="true" />
+        </h2>
         
         <div className={`flex flex-col lg:flex-row gap-8 items-center ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
           <div className="lg:w-2/3">
@@ -42,7 +87,7 @@ const Career = () => {
             <img 
               src="./Portfolio/foto van mezelf in silhouette.jpg" 
               alt="Career" 
-              className="w-full h-auto rounded-lg shadow-lg"
+              className="w-full h-auto rounded-md shadow-lg"
             />
           </div>
         </div>

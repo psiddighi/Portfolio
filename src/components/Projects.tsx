@@ -5,11 +5,11 @@ import { navigateWithTransition } from "@/lib/navigation";
 const ProjectCard = ({ number, title, subtitle, description, isVisible, url }) => {
   return (
     <div 
-      className={`relative border border-border rounded-lg overflow-hidden hover:border-muted-foreground transition-all cursor-pointer card-hover ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} 
+      className={`relative border border-border rounded-md overflow-hidden hover:border-accent transition-all cursor-pointer card-hover ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
       style={{ animationDelay: `${Number(number) * 100}ms` }}
     >
       <div className="p-6">
-        <span className="text-muted-foreground block mb-4">{`• ${number.padStart(2, '0')}`}</span>
+        <span className="text-accent block mb-4 font-bold tracking-[0.28em]">{`• ${number.padStart(2, '0')}`}</span>
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <h4 className="text-lg text-muted-foreground mb-4">{subtitle}</h4>
         <p className="text-sm text-muted-foreground">{description}</p>
@@ -50,10 +50,11 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="projects-section" className="py-16 px-6 md:px-10 lg:px-16">
+    <section id="projects-section" className="py-16 px-6 md:px-10 lg:px-16 relative">
       <div className="max-w-6xl mx-auto">
-        <h2 className="uppercase text-xl mb-2">
-          <span className="inline-block dot-separator">SIDE PROJECTS</span>
+        <h2 className="uppercase text-xl mb-2 flex items-center gap-4">
+          <span className="inline-block dot-separator shrink-0">SIDE PROJECTS</span>
+          <span className="h-px flex-1 bg-gradient-to-r from-foreground/20 to-transparent" aria-hidden="true" />
         </h2>
         
         <div className="flex justify-between items-end mb-12">
@@ -62,7 +63,7 @@ const Projects = () => {
           </h1>
           <button 
             onClick={() => navigateWithTransition(navigate, "/projects", location.pathname)}
-            className="hidden md:block text-foreground hover:text-highlight transition-colors"
+            className="hidden md:block rounded-md border border-border bg-white/35 px-5 py-3 text-foreground backdrop-blur-xl hover:border-accent hover:text-accent transition-colors"
           >
             See More
           </button>
@@ -100,7 +101,7 @@ const Projects = () => {
         <div className="mt-8 text-center md:hidden">
           <button 
             onClick={() => navigateWithTransition(navigate, "/projects", location.pathname)}
-            className="text-foreground hover:text-highlight transition-colors"
+            className="rounded-md border border-border bg-white/35 px-5 py-3 text-foreground backdrop-blur-xl hover:border-accent hover:text-accent transition-colors"
           >
             See More
           </button>

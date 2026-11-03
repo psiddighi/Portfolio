@@ -27,14 +27,12 @@ const AboutSection = () => {
   return (
     <section id="about-section" className="py-16 px-6 md:px-10 lg:px-16 relative overflow-hidden">
       {/* Banner Image */}
-      <div className="w-full h-64 md:h-80 lg:h-96 mb-12 relative overflow-hidden rounded-lg">
+      <div className="w-full h-64 md:h-80 lg:h-96 mb-12 relative overflow-hidden rounded-md border border-white/50 shadow-[0_28px_90px_rgba(57,44,28,0.14)]">
         <img 
           src="./Portfolio/IMG_2317.jpg" 
           alt="Technology Banner" 
           className="w-full h-full object-cover transition-all duration-300"
         />
-        <div className="absolute inset-0 bg-background/250 flex items-center justify-center">
-        </div>
       </div>
       {/* Circuit board background pattern - SVG overlay */}
       <div className="absolute top-0 left-0 w-full h-40 opacity-20 bg-gradient-to-b from-muted to-transparent">
@@ -70,7 +68,7 @@ const AboutSection = () => {
                 <span className="inline-block mr-2">👋</span> HI THERE, I STUDY
               </p>
               <h3 className="text-4xl font-bold mb-2">SOFTWARE<br />DEVELOPMENT</h3>
-              <p className="text-xl mb-6">at <span className="text-orange-400">Yonder</span></p>
+              <p className="text-xl mb-6">at <span className="text-accent">Yonder</span></p>
             </div>
             
             <div>
@@ -100,9 +98,9 @@ const AboutSection = () => {
           
           {/* Right Column - Experience Card */}
           <div className={`lg:w-1/2 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} style={{ animationDelay: "200ms" }}>
-            <div className="bg-yellow-400 p-8 rounded-lg text-black">
+            <div className="bg-card/65 p-8 rounded-md text-card-foreground border border-white/50 shadow-[0_28px_90px_rgba(57,44,28,0.12)] backdrop-blur-xl">
               <h3 className="text-2xl font-bold mb-6 flex items-center">
-                <span className="inline-block mr-2">✓</span> EXPERIENCE
+                <span className="inline-flex mr-3 h-8 w-8 items-center justify-center rounded-full bg-accent text-accent-foreground">✓</span> EXPERIENCE
               </h3>
               
               <div className="mb-6">
@@ -113,7 +111,7 @@ const AboutSection = () => {
                 
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-3">
+                    <div className="w-12 h-12 bg-muted rounded-full overflow-hidden mr-3 ring-2 ring-white/60">
                       <img 
                         src="./Portfolio/1719273186949.jpg" 
                         alt="Parsa Siddighi" 
@@ -123,7 +121,7 @@ const AboutSection = () => {
                     <span className="font-bold">Parsa Siddighi</span>
                   </div>
                   
-                  <Link to="/about" className="font-bold flex items-center hover:text-gray-700 transition-colors group" onClick={(e) => {
+                  <Link to="/about" className="font-bold flex items-center text-accent hover:text-foreground transition-colors group" onClick={(e) => {
                     e.preventDefault();
                     navigateWithTransition(navigate, '/about');
                   }}>

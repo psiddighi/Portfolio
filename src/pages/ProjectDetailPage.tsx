@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, X } from "lucide-react";
 import { navigateWithTransition } from "@/lib/navigation";
 import { useState, useEffect } from "react";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
-  DialogOverlay,
 } from "@/components/ui/dialog";
 import {
   Carousel,
@@ -106,6 +106,23 @@ const PROJECT_DETAILS: Record<string, ProjectDetailData> = {
     repoUrl: "https://github.com/psiddighi/Custom-WP-blog-site",
     images: ["./Portfolio/travelbug1.png", "./Portfolio/travelbug2.png", "./Portfolio/travelbug3.png"]
   },
+  "ai-language-coach": {
+    title: "AI Language Coach",
+    description: "My project at MindLabs focused on developing an AI Language Coach for NT2 students. The web platform helps students improve their Dutch through realistic AI-powered conversations, personalized feedback, and interactive exercises. It also includes gamification features such as XP, levels, streaks, and a skill map to make learning more engaging.",
+    tech: [
+      "Frontend: React / Next.js",
+      "Styling: Tailwind CSS",
+      "Backend: Node.js + Express.js",
+      "Database: MongoDB / Mongoose",
+      "AI: OpenAI API voor de AI-gesprekken, feedback en taalondersteuning",
+      "Design: Figma",
+      "Version control: Git + GitHub"
+    ],
+    images: [
+      "./Portfolio/Screenshot%202026-11-03%20at%2015-16-12%20AI%20Taalcoach%20%C2%B7%20Op%20jouw%20tempo.png",
+      "./Portfolio/Screenshot%202026-11-03%20at%2015-17-36%20AI%20Taalcoach%20%C2%B7%20Op%20jouw%20tempo.png"
+    ]
+  },
 };
 
 const ProjectDetailPage = () => {
@@ -163,20 +180,26 @@ const ProjectDetailPage = () => {
             ))}
           </div>
 
-          <div className="flex gap-4 mb-10">
-            <a href={data.liveUrl || "#"} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded hover:opacity-90 transition-opacity">
-              <ExternalLink className="w-4 h-4" /> Live Demo
-            </a>
-            <a href={data.repoUrl || "#"} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-border px-4 py-2 rounded hover:bg-muted transition-colors">
-              <Github className="w-4 h-4" /> GitHub Repo
-            </a>
-          </div>
+          {(data.liveUrl || data.repoUrl) && (
+            <div className="flex gap-4 mb-10">
+              {data.liveUrl && (
+                <a href={data.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded hover:opacity-90 transition-opacity">
+                  <ExternalLink className="w-4 h-4" /> Live Demo
+                </a>
+              )}
+              {data.repoUrl && (
+                <a href={data.repoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-border px-4 py-2 rounded hover:bg-muted transition-colors">
+                  <Github className="w-4 h-4" /> GitHub Repo
+                </a>
+              )}
+            </div>
+          )}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.images.map((src, i) => (
               <div
                 key={i}
-                className="rounded-lg overflow-hidden border border-border bg-card cursor-zoom-in"
+                className="rounded-md overflow-hidden border border-border bg-card cursor-zoom-in"
                 role="button"
                 tabIndex={0}
                 onClick={() => {
@@ -206,28 +229,40 @@ const ProjectDetailPage = () => {
               setLightboxOpen(open);
             }}
           >
-            <DialogOverlay />
-            <DialogContent className="max-w-6xl w-[92vw] p-0 bg-transparent border-none shadow-none">
+            <DialogContent className="max-w-none w-[94vw] h-[92vh] p-0 bg-transparent border-none shadow-none [&>button:last-child]:hidden">
+              <DialogClose className="absolute right-3 top-20 z-50 inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/15 bg-black/35 text-white shadow-[0_18px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/55 hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 md:right-8 md:top-24">
+                <X className="h-5 w-5" />
+                <span className="sr-only">Close image preview</span>
+              </DialogClose>
               <Carousel
                 opts={{ startIndex: activeIndex }}
                 setApi={(api) => {
                   setCarouselApi(api);
                 }}
-                className="w-full"
+                className="flex h-full w-full items-center justify-center"
               >
-                <CarouselContent>
+                <CarouselContent className="h-full items-center">
                   {data.images.map((src, idx) => (
-                    <CarouselItem key={idx} className="flex items-center justify-center">
-                      <img
-                        src={src}
-                        alt={`${data.title} screenshot ${idx + 1}`}
-                        className="max-h-[80vh] w-auto object-contain"
-                      />
+                    <CarouselItem key={idx} className="flex h-full items-center justify-center px-3 md:px-14">
+                      <div className="relative flex max-h-[78vh] w-full max-w-5xl items-center justify-center overflow-hidden rounded-lg border border-white/15 bg-black/35 p-2 shadow-[0_24px_100px_rgba(0,0,0,0.36)] backdrop-blur-2xl md:p-3">
+                        <img
+                          src={src}
+                          alt={`${data.title} screenshot ${idx + 1}`}
+                          className="max-h-[72vh] max-w-full rounded-md object-contain"
+                        />
+                        <div className="pointer-events-none absolute left-4 top-4 rounded-md border border-white/15 bg-black/35 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-white/75 backdrop-blur-xl">
+                          {String(idx + 1).padStart(2, "0")} / {String(data.images.length).padStart(2, "0")}
+                        </div>
+                      </div>
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="left-4 top-1/2 -translate-y-1/2 bg-background/60 backdrop-blur-sm" />
-                <CarouselNext className="right-4 top-1/2 -translate-y-1/2 bg-background/60 backdrop-blur-sm" />
+                {data.images.length > 1 && (
+                  <>
+                    <CarouselPrevious className="left-2 top-1/2 h-12 w-12 -translate-y-1/2 rounded-md border-white/15 bg-black/35 text-white shadow-[0_18px_50px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-all duration-300 hover:-translate-x-1 hover:border-accent/55 hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-20 md:left-6" />
+                    <CarouselNext className="right-2 top-1/2 h-12 w-12 -translate-y-1/2 rounded-md border-white/15 bg-black/35 text-white shadow-[0_18px_50px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-all duration-300 hover:translate-x-1 hover:border-accent/55 hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-20 md:right-6" />
+                  </>
+                )}
               </Carousel>
             </DialogContent>
           </Dialog>

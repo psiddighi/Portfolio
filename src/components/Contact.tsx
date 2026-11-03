@@ -40,17 +40,17 @@ const Contact = () => {
           </svg>
         </div>
         
-        <div className={`text-center mb-8 sm:mb-10 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: "100ms" }}>
+        <div className={`text-center mb-8 sm:mb-10 rounded-md border border-white/50 bg-card/55 p-8 shadow-[0_28px_90px_rgba(57,44,28,0.12)] backdrop-blur-xl ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: "100ms" }}>
           <div className="inline-flex flex-col sm:flex-row items-center justify-center">
             <Mail className="w-8 h-8 sm:w-10 sm:h-10 mb-3 sm:mb-0 sm:mr-3 text-accent" />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">Have Any <span className="bg-white dark:bg-white text-black px-2 sm:px-3 py-1">Questions?</span></h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">Have Any <span className="bg-foreground text-background px-2 sm:px-3 py-1 rounded-md">Questions?</span></h2>
           </div>
         </div>
         
         <div className="flex justify-center mt-6 sm:mt-8">
           <a href="mailto:zakelijkps@gmail.com">
             <Button 
-              className={`bg-white hover:bg-yellow-400 dark:bg-white text-black dark:hover:bg-gray-400 transition-colors duration-300 shadow-lg ${isVisible ? 'animate-slide-in-bottom' : 'opacity-0'}`}
+              className={`bg-foreground hover:bg-accent text-background hover:text-accent-foreground transition-colors duration-300 shadow-lg rounded-md ${isVisible ? 'animate-slide-in-bottom' : 'opacity-0'}`}
               style={{ animationDelay: "300ms" }}
             >
               <Mail className="w-4 h-4 mr-2" />

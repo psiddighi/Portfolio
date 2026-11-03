@@ -62,7 +62,7 @@ const config = {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				highlight: '#FFD700',
+                                highlight: '#D9693A',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -70,6 +70,8 @@ const config = {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
+                                sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                                display: ['Space Grotesk', 'Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
 				mono: ['monospace', 'ui-monospace', 'SFMono-Regular'],
 			},
 			keyframes: {

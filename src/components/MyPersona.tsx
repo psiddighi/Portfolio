@@ -1,8 +1,6 @@
-import React from 'react';
-
 const MyPersona = () => {
   return (
-    <section className="py-16 px-6 md:px-10 lg:px-16 relative overflow-hidden">
+    <section className="pt-32 pb-16 px-6 md:px-10 lg:px-16 relative overflow-hidden md:pt-36">
       <div className="max-w-6xl mx-auto">
         <h2 className="uppercase text-xl mb-12 text-center">
           <span className="inline-block border-b-2 border-foreground pb-2">MY PERSONA</span>

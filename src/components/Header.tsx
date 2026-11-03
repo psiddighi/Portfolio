@@ -1,10 +1,17 @@
-import { Menu, Sun, Moon } from "lucide-react";
+import { Menu, Sun, Moon, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { navigateWithTransition } from "@/lib/navigation";
+
+const navItems = [
+  { label: "About", path: "/about" },
+  { label: "Services", path: "/services" },
+  { label: "Portfolio", path: "/projects" },
+  { label: "Blog", path: "/blog" },
+];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,102 +29,86 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.classList.toggle("menu-open", isMenuOpen);
+
+    return () => document.body.classList.remove("menu-open");
+  }, [isMenuOpen]);
+
+  const handleNavigate = (path: string) => {
+    setIsMenuOpen(false);
+    navigateWithTransition(navigate, path, location.pathname);
+  };
+
   return (
-    <header 
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-10 flex justify-between items-center",
-        isScrolled ? "bg-background/80 backdrop-blur-md" : "bg-transparent"
-      )}
-    >
-      <div className="flex items-center gap-3 animate-fade-in">
-        <Link to="/" className="text-xl font-semibold" onClick={(e) => {
-          e.preventDefault();
-          navigateWithTransition(navigate, "/", location.pathname);
-        }}>P.SIDDIGHI</Link>
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          onClick={toggleTheme} 
-          className="rounded-full transition-all duration-300 hover:bg-accent/20"
-          aria-label="Toggle theme"
-        >
-          {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-        </Button>
-      </div>
-
-      <button 
-        className="md:hidden"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        aria-label="Toggle menu"
+    <>
+      <header
+        className={cn(
+          "fixed left-0 right-0 top-0 z-[80] border-b px-6 py-4 transition-all duration-500 md:px-10",
+          "border-foreground/10 bg-background/55 text-foreground backdrop-blur-2xl",
+          isScrolled && "bg-background/72 shadow-[0_18px_70px_rgba(57,44,28,0.08)]"
+        )}
       >
-        <Menu className="w-6 h-6" />
-      </button>
+        <div className="flex items-center justify-between gap-4">
+          <Link
+            to="/"
+            className="text-sm font-black uppercase tracking-[0.28em] md:text-base"
+            onClick={(event) => {
+              event.preventDefault();
+              handleNavigate("/");
+            }}
+          >
+            Destrix
+          </Link>
 
-      <nav className={cn(
-        "fixed md:static top-16 right-0 bg-background/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none w-full md:w-auto h-auto p-6 md:p-0 transition-all duration-300 ease-in-out z-50",
-        isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full md:translate-x-0 opacity-0 md:opacity-100 pointer-events-none md:pointer-events-auto"
-      )}>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="h-11 w-11 rounded-md border border-foreground/10 bg-white/25 transition-all duration-300 hover:bg-white/55"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
+            <button
+              className="menu-toggle"
+              onClick={() => setIsMenuOpen((open) => !open)}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+            >
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
+        </div>
+      </header>
 
-        <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
-          <li className="animate-slide-in-top md:animate-slide-in-left" style={{ animationDelay: "100ms" }}>
-            <Link 
-              to="/about"
-              className={`hover:text-highlight transition-colors link-underline ${location.pathname === '/about' ? 'text-highlight' : ''}`} 
-              onClick={(e) => {
-                e.preventDefault();
-                setIsMenuOpen(false);
-                navigateWithTransition(navigate, '/about', location.pathname);
-              }} 
-              style={{ pointerEvents: 'auto' }}
+      <div className={cn("fullscreen-menu", isMenuOpen && "fullscreen-menu--open")} aria-hidden={!isMenuOpen}>
+        <div className="fullscreen-menu__noise" />
+        <div className="fullscreen-menu__orb fullscreen-menu__orb--one" />
+        <div className="fullscreen-menu__orb fullscreen-menu__orb--two" />
+        <nav className="fullscreen-menu__nav" aria-label="Main navigation">
+          {navItems.map((item, index) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={cn("fullscreen-menu__link", location.pathname === item.path && "is-active")}
+              style={{ animationDelay: isMenuOpen ? `${170 + index * 120}ms` : "0ms" }}
+              onClick={(event) => {
+                event.preventDefault();
+                handleNavigate(item.path);
+              }}
             >
-              About
+              <span>{item.label}</span>
             </Link>
-          </li>
-          <li className="animate-slide-in-top md:animate-slide-in-left" style={{ animationDelay: "200ms" }}>
-            <Link 
-              to="/blog"
-              className={`hover:text-highlight transition-colors link-underline ${location.pathname === '/blog' ? 'text-highlight' : ''}`} 
-              onClick={(e) => {
-                e.preventDefault();
-                setIsMenuOpen(false);
-                navigateWithTransition(navigate, '/blog', location.pathname);
-              }} 
-              style={{ pointerEvents: 'auto' }}
-            >
-              Blog
-            </Link>
-          </li>
-          <li className="animate-slide-in-top md:animate-slide-in-left" style={{ animationDelay: "250ms" }}>
-            <Link 
-              to="/services"
-              className={`hover:text-highlight transition-colors link-underline ${location.pathname === '/services' ? 'text-highlight' : ''}`} 
-              onClick={(e) => {
-                e.preventDefault();
-                setIsMenuOpen(false);
-                navigateWithTransition(navigate, '/services', location.pathname);
-              }} 
-              style={{ pointerEvents: 'auto' }}
-            >
-              Services
-            </Link>
-          </li>
-          <li className="animate-slide-in-top md:animate-slide-in-left" style={{ animationDelay: "300ms" }}>
-            <Link 
-              to="/projects"
-              className={`hover:text-highlight transition-colors link-underline ${location.pathname === '/projects' ? 'text-highlight' : ''}`} 
-              onClick={(e) => {
-                e.preventDefault();
-                setIsMenuOpen(false);
-                navigateWithTransition(navigate, '/projects', location.pathname);
-              }} 
-              style={{ pointerEvents: 'auto' }}
-            >
-              Projects
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+          ))}
+        </nav>
+        <div className="fullscreen-menu__footer">
+          <span>Creative Developer & Designer</span>
+          <a href="mailto:zakelijkps@gmail.com">zakelijkps@gmail.com</a>
+        </div>
+      </div>
+    </>
   );
 };
 

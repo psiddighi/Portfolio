@@ -21,21 +21,21 @@ const ServicesPage = () => {
           <section className="mb-16">
             <h2 className="text-2xl font-semibold mb-6">Who is it for?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="rounded-lg border border-border bg-card p-6 hover:border-accent transition-colors">
+              <div className="rounded-md border border-border bg-card p-6 hover:border-accent transition-colors">
                 <div className="flex items-center gap-3 mb-3">
                   <Rocket className="w-5 h-5 text-accent" />
                   <span className="text-lg font-medium">Startups</span>
                 </div>
                 <p className="text-sm text-muted-foreground">Fast, iterative delivery to validate ideas and reach users quickly.</p>
               </div>
-              <div className="rounded-lg border border-border bg-card p-6 hover:border-accent transition-colors">
+              <div className="rounded-md border border-border bg-card p-6 hover:border-accent transition-colors">
                 <div className="flex items-center gap-3 mb-3">
                   <Building2 className="w-5 h-5 text-accent" />
                   <span className="text-lg font-medium">Small businesses</span>
                 </div>
                 <p className="text-sm text-muted-foreground">Professional websites and upgrades that drive credibility and conversions.</p>
               </div>
-              <div className="rounded-lg border border-border bg-card p-6 hover:border-accent transition-colors">
+              <div className="rounded-md border border-border bg-card p-6 hover:border-accent transition-colors">
                 <div className="flex items-center gap-3 mb-3">
                   <Users className="w-5 h-5 text-accent" />
                   <span className="text-lg font-medium">Freelancers & Creators</span>
@@ -48,21 +48,21 @@ const ServicesPage = () => {
           <section className="mb-16">
             <h2 className="text-2xl font-semibold mb-6">What I propose</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="rounded-lg border border-border bg-card p-6 hover:border-accent transition-colors">
+              <div className="rounded-md border border-border bg-card p-6 hover:border-accent transition-colors">
                 <div className="flex items-center gap-3 mb-3">
                   <Code className="w-5 h-5 text-accent" />
                   <span className="text-lg font-medium">from €400</span>
                 </div>
                 <p className="text-sm text-muted-foreground">Personal websites & development, fast, responsive and optimized. Ideal for showcasing your work or services.</p>
               </div>
-              <div className="rounded-lg border border-border bg-card p-6 hover:border-accent transition-colors">
+              <div className="rounded-md border border-border bg-card p-6 hover:border-accent transition-colors">
                 <div className="flex items-center gap-3 mb-3">
                   <Brush className="w-5 h-5 text-accent" />
                   <span className="text-lg font-medium">from €200</span>
                 </div>
                 <p className="text-sm text-muted-foreground">Custom designs: UI/UX, webdesigns, logo designs, personal branding.</p>
               </div>
-              <div className="rounded-lg border border-border bg-card p-6 hover:border-accent transition-colors">
+              <div className="rounded-md border border-border bg-card p-6 hover:border-accent transition-colors">
                 <div className="flex items-center gap-3 mb-3">
                   <ShieldCheck className="w-5 h-5 text-accent" />
                   <span className="text-lg font-medium">from €80/mo</span>
@@ -75,28 +75,28 @@ const ServicesPage = () => {
           <section className="mb-16">
             <h2 className="text-2xl font-semibold mb-6">Why me/us?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-lg border border-border bg-card p-6">
+              <div className="rounded-md border border-border bg-card p-6">
                 <div className="flex items-center gap-3 mb-2">
                   <CheckCircle className="w-5 h-5 text-accent" />
                   <span className="text-lg font-medium">4+ years of experience</span>
                 </div>
                 <p className="text-sm text-muted-foreground">Proven track record across front-end and back-end projects.</p>
               </div>
-              <div className="rounded-lg border border-border bg-card p-6">
+              <div className="rounded-md border border-border bg-card p-6">
                 <div className="flex items-center gap-3 mb-2">
                   <CheckCircle className="w-5 h-5 text-accent" />
                   <span className="text-lg font-medium">Active Fullstack development team & Designers</span>
                 </div>
                 <p className="text-sm text-muted-foreground">End-to-end delivery from design to deployment.</p>
               </div>
-              <div className="rounded-lg border border-border bg-card p-6">
+              <div className="rounded-md border border-border bg-card p-6">
                 <div className="flex items-center gap-3 mb-2">
                   <CheckCircle className="w-5 h-5 text-accent" />
                   <span className="text-lg font-medium">Full customization tailored to your business</span>
                 </div>
                 <p className="text-sm text-muted-foreground">Solutions adapted to your brand, goals, and workflows.</p>
               </div>
-              <div className="rounded-lg border border-border bg-card p-6">
+              <div className="rounded-md border border-border bg-card p-6">
                 <div className="flex items-center gap-3 mb-2">
                   <CheckCircle className="w-5 h-5 text-accent" />
                   <span className="text-lg font-medium">Free intake</span>
@@ -107,7 +107,7 @@ const ServicesPage = () => {
           </section>
 
           <section className="mb-16">
-            <div className="rounded-xl border border-border bg-card relative overflow-hidden">
+            <div className="rounded-md border border-border bg-card relative overflow-hidden">
               <div className="absolute -top-20 -left-16 w-64 h-64 bg-accent/10 blur-3xl" />
               <div className="absolute -bottom-24 -right-20 w-56 h-56 bg-foreground/5 blur-3xl" />
               <div className="p-6 md:p-8">
@@ -131,7 +131,7 @@ const ServicesPage = () => {
           </section>
 
           <section>
-            <div className="rounded-xl border border-border bg-card p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="rounded-md border border-border bg-card p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div>
                 <h3 className="text-2xl font-semibold mb-2">Ready to get started?</h3>
                 <p className="text-muted-foreground">Book a free intake or explore my work.</p>

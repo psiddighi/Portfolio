@@ -13,8 +13,8 @@ const LoadingBar = React.forwardRef<HTMLDivElement, LoadingBarProps>(
       <div
         ref={ref}
         className={cn(
-          "fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-green-900 via-green-800 to-green-900 transition-transform duration-300 ease-in-out",
-          isLoading ? "translate-x-0" : "-translate-x-full",
+          "route-loading-bar",
+          isLoading ? "route-loading-bar--active" : "route-loading-bar--idle",
           className
         )}
         {...props}

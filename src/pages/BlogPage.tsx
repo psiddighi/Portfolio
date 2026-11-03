@@ -61,6 +61,11 @@ const BlogPage = () => {
 
   const blogPosts = [
     {
+      title: "Building an AI Language Coach at MindLabs",
+      date: "2026-01-09",
+      slug: "building-ai-language-coach-mindlabs",
+    },
+    {
       title: "Internship Allround Web",
       date: "2024-26-08",
       slug: "internship-allround-web",

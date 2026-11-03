@@ -18,6 +18,7 @@ import { initBarba } from "./lib/barba";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import BlogDetailPage from "./pages/BlogDetailPage";
 import ServicesPage from "./pages/ServicesPage";
+import FirstLoadScreen from "./components/FirstLoadScreen";
 
 const queryClient = new QueryClient();
 
@@ -66,6 +67,7 @@ const App = () => {
         <TooltipProvider>
           <Toaster />
           <Sonner />
+          <FirstLoadScreen />
           <div data-barba="wrapper">
             <Router>
               <AppContent />

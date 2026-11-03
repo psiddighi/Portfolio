@@ -1,37 +1,52 @@
 
 import { Instagram, Linkedin, Github } from "lucide-react";
 
+const socialLinks = [
+  {
+    label: "GitHub",
+    href: "https://github.com/psiddighi",
+    Icon: Github,
+    className: "social-link--github",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/parsa-siddighi/",
+    Icon: Linkedin,
+    className: "social-link--linkedin",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/p.siddighi/",
+    Icon: Instagram,
+    className: "social-link--instagram",
+  },
+];
+
 const Footer = () => {
   return (
     <footer className="py-8 px-6 md:px-10 lg:px-16 border-t border-border">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground mb-4 md:mb-0">
+        <div className="grid items-center gap-4 text-center md:grid-cols-3 md:text-left">
+          <p className="text-muted-foreground md:justify-self-start">
             2026©Parsa Siddighi
           </p>
           
-          <div className="flex space-x-4">
-            <a 
-              href="https://github.com/psiddighi" target = "_blank" rel = "noreferrer"
-              className="bg-muted p-2 rounded-md hover:bg-muted/80 transition-colors"
-              aria-label="GitHub"
-            >
-              <Github className="w-5 h-5" />
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/parsa-siddighi/" target = "_blank" rel = "noreferrer"
-              className="bg-muted p-2 rounded-md hover:bg-muted/80 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a 
-              href="https://www.instagram.com/p.siddighi/" target = "_blank" rel = "noreferrer" 
-              className="bg-muted p-2 rounded-md hover:bg-muted/80 transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5" />
-            </a>
+          <div className="flex flex-wrap justify-center gap-3 md:col-start-3 md:justify-self-end">
+            {socialLinks.map(({ label, href, Icon, className }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className={`social-link ${className}`}
+                aria-label={label}
+              >
+                <span className="social-link__icon-wrap" aria-hidden="true">
+                  <Icon className="social-link__icon" />
+                </span>
+                <span className="social-link__label">{label}</span>
+              </a>
+            ))}
           </div>
         </div>
       </div>
