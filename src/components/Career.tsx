@@ -25,6 +25,15 @@ const Career = () => {
   }, []);
 
   useEffect(() => {
+    const shouldShowImmediately =
+      window.matchMedia('(max-width: 767px)').matches ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (shouldShowImmediately) {
+      setIsHeadingVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -32,7 +41,7 @@ const Career = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.45 }
+      { rootMargin: '0px 0px -12% 0px', threshold: 0.15 }
     );
 
     const element = headingRef.current;
