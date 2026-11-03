@@ -44,7 +44,7 @@ const Header = () => {
     <>
       <header
         className={cn(
-          "fixed left-0 right-0 top-0 z-[80] border-b px-6 py-4 transition-all duration-500 md:px-10",
+          "absolute left-0 right-0 top-0 z-[80] border-b px-6 py-4 transition-all duration-500 md:fixed md:px-10",
           "border-foreground/10 bg-background/55 text-foreground backdrop-blur-2xl",
           isScrolled && "bg-background/72 shadow-[0_18px_70px_rgba(57,44,28,0.08)]"
         )}
