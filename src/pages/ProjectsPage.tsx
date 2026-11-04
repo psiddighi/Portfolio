@@ -115,10 +115,10 @@ const ComingSoonCard = ({ isVisible, index }: { isVisible: boolean; index: numbe
     style={{ animationDelay: `${index * 100}ms` }}
   >
     <div className="px-6 text-center">
-      <h3 className="text-3xl font-black lowercase leading-none tracking-[-0.055em] text-foreground md:text-4xl">
+      <h3 className="text-3xl font-black lowercase leading-none tracking-[-0.055em] text-neutral-950 md:text-4xl">
         coming soon... 👀
       </h3>
-      <p className="mt-3 text-sm font-semibold text-muted-foreground">
+      <p className="mt-3 text-sm font-semibold text-neutral-600">
         In development... 🛠️
       </p>
     </div>

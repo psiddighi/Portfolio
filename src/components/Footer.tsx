@@ -16,7 +16,7 @@ const socialLinks = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/p.siddighi/",
+    href: "https://www.instagram.com/013.ps/",
     Icon: Instagram,
     className: "social-link--instagram",
   },

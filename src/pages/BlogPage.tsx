@@ -91,7 +91,7 @@ const BlogPage = () => {
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Blog</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-12">
-            A timeline of highlights showing what my career as a developer looks like from start to finish.
+              A timeline of highlights showing what my career looks like from start to finish.
             </p>
             
             <div id="blog-list" className="relative">
