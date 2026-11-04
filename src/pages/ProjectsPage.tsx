@@ -12,12 +12,13 @@ interface ProjectCardProps {
   tags: string[];
   slug: string;
   tone?: "light" | "dark";
+  forceBlackText?: boolean;
   imageZoom?: "cover" | "contain";
   isVisible: boolean;
   index: number;
 }
 
-const ProjectCard = ({ title, description, image, tags, slug, tone = "light", imageZoom = "cover", isVisible, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, image, tags, slug, tone = "light", forceBlackText = false, imageZoom = "cover", isVisible, index }: ProjectCardProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const isDarkTone = tone === "dark";
@@ -46,6 +47,8 @@ const ProjectCard = ({ title, description, image, tags, slug, tone = "light", im
         className={`absolute inset-x-0 bottom-0 z-20 flex h-[64%] flex-col overflow-hidden border-t p-4 shadow-[0_-18px_70px_rgba(57,44,28,0.14)] backdrop-blur-2xl transition-[height,background-color] duration-500 ease-out group-hover:h-[88%] ${
           isDarkTone
             ? "border-white/20 bg-neutral-950/82 text-white group-hover:bg-neutral-950/92"
+            : forceBlackText
+              ? "border-white/45 bg-white/92 text-neutral-950 group-hover:bg-white/98"
             : "border-white/45 bg-background/92 text-foreground group-hover:bg-background/98"
         }`}
       >
@@ -56,6 +59,8 @@ const ProjectCard = ({ title, description, image, tags, slug, tone = "light", im
               className={`rounded-md border px-2 py-0.5 text-[0.64rem] font-semibold backdrop-blur-xl transition-colors duration-300 ${
                 isDarkTone
                   ? "border-white/25 bg-white/8 text-white/72 group-hover:border-accent/45 group-hover:text-white"
+                  : forceBlackText
+                    ? "border-neutral-950/15 bg-white/55 text-neutral-700 group-hover:border-accent/35 group-hover:text-neutral-950"
                   : "border-border/80 bg-background/55 text-muted-foreground group-hover:border-accent/30 group-hover:text-foreground"
               }`}
             >
@@ -68,19 +73,21 @@ const ProjectCard = ({ title, description, image, tags, slug, tone = "light", im
           <h3 className="mb-1.5 line-clamp-1 text-[1.35rem] font-black leading-[0.92] tracking-[-0.06em] transition-all duration-300 group-hover:line-clamp-2 md:text-[1.55rem]">
             {title}
           </h3>
-          <p className={`line-clamp-1 text-xs leading-snug transition-all duration-300 group-hover:line-clamp-none md:text-[0.82rem] ${isDarkTone ? "text-white/72" : "text-muted-foreground"}`}>
+          <p className={`line-clamp-1 text-xs leading-snug transition-all duration-300 group-hover:line-clamp-none md:text-[0.82rem] ${isDarkTone ? "text-white/72" : forceBlackText ? "text-neutral-700" : "text-muted-foreground"}`}>
             {description}
           </p>
         </div>
 
-        <div className={`mt-3 flex shrink-0 items-center justify-between border-t pt-3 ${isDarkTone ? "border-white/20" : "border-border/70"}`}>
-          <span className={`text-[0.68rem] font-black uppercase tracking-[0.18em] transition-colors duration-300 group-hover:text-accent ${isDarkTone ? "text-white/62" : "text-muted-foreground"}`}>
+        <div className={`mt-3 flex shrink-0 items-center justify-between border-t pt-3 ${isDarkTone ? "border-white/20" : forceBlackText ? "border-neutral-950/15" : "border-border/70"}`}>
+          <span className={`text-[0.68rem] font-black uppercase tracking-[0.18em] transition-colors duration-300 group-hover:text-accent ${isDarkTone ? "text-white/62" : forceBlackText ? "text-neutral-700" : "text-muted-foreground"}`}>
             View project
           </span>
           <span
             className={`grid h-9 w-9 place-items-center rounded-md border transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-foreground ${
               isDarkTone
                 ? "border-white/25 bg-white/10 text-white"
+                : forceBlackText
+                  ? "border-neutral-950/15 bg-white/55 text-neutral-950"
                 : "border-border bg-background/55 text-foreground"
             }`}
           >
@@ -156,6 +163,7 @@ const ProjectsPage = () => {
       size: "small" as const,
       slug: "tijdelijk-zakelijk-internet",
       tone: "light" as const,
+      forceBlackText: true,
     },
     {
       title: "Garry Panzu",
@@ -165,6 +173,7 @@ const ProjectsPage = () => {
       size: "medium" as const,
       slug: "garry-panzu",
       tone: "light" as const,
+      forceBlackText: true,
     },
     {
       title: "Griff Duarte",
@@ -244,6 +253,7 @@ const ProjectsPage = () => {
                       image={project.image}
                       tags={project.tags}
                       tone={project.tone}
+                      forceBlackText={project.forceBlackText}
                       imageZoom={project.imageZoom}
                       isVisible={isVisible}
                       index={index}
