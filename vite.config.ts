@@ -28,7 +28,19 @@ export default defineConfig(({ command, mode }) => ({
     sourcemap: false,
     emptyOutDir: true,
     rollupOptions: {
+      input: path.resolve(__dirname, "src/main.tsx"),
       output: {
+        entryFileNames: "assets/app.js",
+        chunkFileNames: "assets/[name].js",
+        assetFileNames: (assetInfo) => {
+          const assetName = assetInfo.names?.[0] ?? "";
+
+          if (assetName.endsWith(".css")) {
+            return "assets/app.css";
+          }
+
+          return "assets/[name][extname]";
+        },
         manualChunks: undefined
       }
     }

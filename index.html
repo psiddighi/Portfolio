@@ -12,6 +12,19 @@
 
   <body>
     <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
+    <script type="module">
+      const isLocalDev = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      if (isLocalDev) {
+        import("/src/main.tsx");
+      } else {
+        const stylesheet = document.createElement("link");
+        stylesheet.rel = "stylesheet";
+        stylesheet.href = "/Portfolio/assets/app.css";
+        document.head.appendChild(stylesheet);
+
+        import("/Portfolio/assets/app.js");
+      }
+    </script>
   </body>
 </html>
