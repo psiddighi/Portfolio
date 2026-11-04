@@ -102,6 +102,22 @@ const ProjectCard = ({ title, description, image, tags, slug, tone = "light", im
   );
 };
 
+const ComingSoonCard = ({ isVisible, index }: { isVisible: boolean; index: number }) => (
+  <article
+    className={`group relative grid aspect-square place-items-center overflow-hidden rounded-lg border border-border/80 bg-white shadow-[0_24px_80px_rgba(57,44,28,0.08)] transition-all duration-500 hover:-translate-y-1 hover:border-accent/70 hover:shadow-[0_32px_110px_rgba(57,44,28,0.14)] ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
+    style={{ animationDelay: `${index * 100}ms` }}
+  >
+    <div className="px-6 text-center">
+      <h3 className="text-3xl font-black lowercase leading-none tracking-[-0.055em] text-foreground md:text-4xl">
+        coming soon... 👀
+      </h3>
+      <p className="mt-3 text-sm font-semibold text-muted-foreground">
+        In development... 🛠️
+      </p>
+    </div>
+  </article>
+);
+
 const ProjectsPage = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -236,6 +252,7 @@ const ProjectsPage = () => {
                   </div>
                 );
               })}
+              <ComingSoonCard isVisible={isVisible} index={projects.length} />
             </div>
           </div>
         </section>

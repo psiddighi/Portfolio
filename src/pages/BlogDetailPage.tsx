@@ -6,6 +6,7 @@ import { ArrowUpRight, MapPin } from "lucide-react";
 
 interface BlogDetailData {
   title: string;
+  kicker?: string;
   subtitle: string;
   text: string;
   heroImage?: string;
@@ -20,7 +21,8 @@ interface BlogDetailData {
 
 const BLOG_DETAILS: Record<string, BlogDetailData> = {
   "building-ai-language-coach-mindlabs": {
-    title: "Building an AI Language Coach at MindLabs",
+    title: "Development program at Mindlabs",
+    kicker: "First open working program",
     subtitle: "A six-month Open Learning experience focused on AI, web development, research, and creating an innovative learning platform for NT2 students.",
     heroImage: "./Portfolio/IMG_3027%202.jpg",
     heroPosition: "center 35%",
@@ -148,7 +150,7 @@ const BlogDetailPage = () => {
           <div className="mb-10 rounded-lg border border-border/80 bg-background/88 p-6 shadow-[0_24px_90px_rgba(57,44,28,0.12)] backdrop-blur-2xl md:p-8">
             <div className="mb-8 flex items-start justify-between gap-6">
               <div>
-                <p className="mb-3 text-xs font-black uppercase tracking-[0.24em] text-accent">Internship story</p>
+                <p className="mb-3 text-xs font-black uppercase tracking-[0.24em] text-accent">{data.kicker ?? "Internship story"}</p>
                 <h1 className="mb-3 text-4xl font-black leading-[0.95] tracking-[-0.055em] md:text-6xl">{data.title}</h1>
                 <h2 className="max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">{data.subtitle}</h2>
               </div>

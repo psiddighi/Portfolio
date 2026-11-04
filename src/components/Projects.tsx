@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { navigateWithTransition } from "@/lib/navigation";
+import { ArrowUpRight } from "lucide-react";
 
 const ProjectCard = ({ number, title, subtitle, description, isVisible, url }) => {
   return (
     <div 
-      className={`relative border border-border rounded-md overflow-hidden hover:border-accent transition-all cursor-pointer card-hover ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
+      className={`group relative border border-border rounded-md overflow-hidden hover:border-accent transition-all cursor-pointer card-hover ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
       style={{ animationDelay: `${Number(number) * 100}ms` }}
     >
       <div className="p-6">
@@ -14,6 +15,9 @@ const ProjectCard = ({ number, title, subtitle, description, isVisible, url }) =
         <h4 className="text-lg text-muted-foreground mb-4">{subtitle}</h4>
         <p className="text-sm text-muted-foreground">{description}</p>
       </div>
+      <span className="pointer-events-none absolute bottom-4 right-4 text-foreground opacity-0 transition-all duration-300 ease-out -translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:text-accent group-hover:opacity-100">
+        <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+      </span>
       {url && (
         <a
           href={url}
@@ -90,11 +94,11 @@ const Projects = () => {
           
           <ProjectCard 
             number="03" 
-            title="Lofi Spin" 
-            subtitle="Live Lofi-Music webapp"
-            description="Webpage/webapp for playing lofi music, with a visually pleasing interface"
+            title="AI Language Coach"
+            subtitle="AI learning platform"
+            description="An AI-powered learning platform for NT2 students with conversations, feedback, XP, streaks and a skill map."
             isVisible={isVisible}
-            url="https://psiddighi.github.io/Lofi-Spin/"
+            url="https://ai-taalcoach-demo.vercel.app/"
           />
         </div>
         
