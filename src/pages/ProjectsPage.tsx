@@ -244,7 +244,7 @@ const ProjectsPage = () => {
           <div className="max-w-7xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Top Digital <span className="text-accent">Projects</span></h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-12">
-              A collection of my most recent and best works across various domains including web development and design, but also everything related to Nutrition and Dietetics. These are the works that I am currently the most proud of to showcase.
+              A collection of my most recent and best works across various domains including web development and design. These are the works that I am currently the most proud of to showcase.
             </p>
             
             <div id="projects-grid" className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
