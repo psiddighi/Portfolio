@@ -82,13 +82,7 @@ const Career = () => {
         <div className={`flex flex-col lg:flex-row gap-8 items-center ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
           <div className="lg:w-2/3">
             <p className="mb-6">
-              I am currently a student in the 4th and final year of my study. I study full stack web and
-              software development at Yonder. The reason why I chose this career is
-              because I loved working with computers ever since I was young. As I got older I
-              became more and more interested in how technology works, so I wanted nothing
-              more than to do something with computers/software after my high school career.
-              I attended Beatrix College in Tilburg for 4 years. I passed every year and made
-              some great friends along the way. I got my VMBO TL degree in 2022.
+              I am currently a graduated and certified developer. I studied full stack web and software development at Yonder for 4+ years. The reason why I chose this career is because I loved working with computers ever since I was young. As I got older I became more and more interested in how technology works, so I wanted nothing more than to do something with computers/software after my high school career. I attended Beatrix College in Tilburg for 4 years. I passed every year and made some great friends along the way. I got my VMBO TL degree in 2022, and got my MBO 4 degree in 2026.
             </p>
           </div>
           

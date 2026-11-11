@@ -23,7 +23,10 @@
         stylesheet.href = "/Portfolio/assets/app.css";
         document.head.appendChild(stylesheet);
 
-        import("/Portfolio/assets/app.js");
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "/Portfolio/assets/app.js";
+        document.body.appendChild(script);
       }
     </script>
   </body>

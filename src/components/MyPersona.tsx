@@ -16,19 +16,19 @@ const MyPersona = () => {
         
         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
           {/* Photo Card 1 - Slightly tilted left */}
-          <div className="bg-white p-4 pb-6 shadow-lg max-w-[280px] transform rotate-[-3deg] hover:rotate-0 transition-all duration-300">
+          <div className="bg-white p-4 pb-6 shadow-lg w-[280px] max-w-[280px] transform rotate-[-3deg] hover:rotate-0 transition-all duration-300">
             <div className="relative mb-4 overflow-hidden">
               <img 
-                src="./Portfolio/IMG_2311_2.jpg" 
+                src="./Portfolio/the%20one.png" 
                 alt="The one" 
-                className="w-full h-64 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-64 object-cover scale-150 translate-x-1.5 translate-y-12 grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>
             <p className="text-center text-black font-medium text-lg">𝒯𝒽𝑒 𝑜𝓃𝑒 🚀</p>
           </div>
           
           {/* Photo Card 2 - No tilt */}
-          <div className="bg-white p-4 pb-6 shadow-lg max-w-[280px] transform hover:rotate-[2deg] transition-all duration-300">
+          <div className="bg-white p-4 pb-6 shadow-lg w-[280px] max-w-[280px] transform hover:rotate-[2deg] transition-all duration-300">
             <div className="relative mb-4 overflow-hidden">
               <img 
                 src="./Portfolio/IMG_9658.JPG" 
@@ -40,7 +40,7 @@ const MyPersona = () => {
           </div>
           
           {/* Photo Card 3 - Slightly tilted right */}
-          <div className="bg-white p-4 pb-6 shadow-lg max-w-[280px] transform rotate-[3deg] hover:rotate-0 transition-all duration-300">
+          <div className="bg-white p-4 pb-6 shadow-lg w-[280px] max-w-[280px] transform rotate-[3deg] hover:rotate-0 transition-all duration-300">
             <div className="relative mb-4 overflow-hidden">
               <img 
                 src="./Portfolio/bridge.jpeg" 

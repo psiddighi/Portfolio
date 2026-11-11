@@ -65,10 +65,10 @@ const AboutSection = () => {
           <div className={`lg:w-1/2 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
             <div className="mb-8">
               <p className="text-xl mb-2">
-                <span className="inline-block mr-2">👋</span> HI THERE, I STUDY
+                <span className="inline-block mr-2">👋</span> HI THERE, I WORK AS A
               </p>
-              <h3 className="text-4xl font-bold mb-2">SOFTWARE<br />DEVELOPMENT</h3>
-              <p className="text-xl mb-6">at <span className="text-accent">Yonder</span></p>
+              <h3 className="text-4xl font-bold mb-2">SOFTWARE<br />DEVELOPER</h3>
+              <p className="text-xl mb-6">Independently</p>
             </div>
             
             <div>
@@ -105,8 +105,7 @@ const AboutSection = () => {
               
               <div className="mb-6">
                 <p className="mb-4">
-                  I'm Parsa Siddighi, A Netherlands-based student Full-Stack developer, and I work on creative, clean and user friendly solutions on the web.
-                  I have more than 4+ years of learning experience using Front-End and Back-End techniques combined with various design tools and working experience during internships at a web development business where I mainly contributed to wordpress based websites for companies and startups. I am currently looking forward to graduating this year.
+                  I'm Parsa Siddighi, 22 years old. A Netherlands-based Full-Stack developer, and I work on creative, clean and user friendly solutions on the web. I have more than 4+ years of learning experience using Front-End and Back-End techniques combined with various design tools and working experience during internships and joined programs at businesses where I mainly contributed to not only WordPress based websites, but also custom software. I am currently looking forward to working independently and pursue my new higher education studies as a dietitian in Nijmegen.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">

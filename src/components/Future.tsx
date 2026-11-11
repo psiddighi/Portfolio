@@ -82,7 +82,7 @@ const Future = () => {
               <span className="typing-caret" aria-hidden="true" />
             </h2>
             <p className="mb-6">
-              After completing my MBO Level 4 education in Software and Web Development, I plan to study{" "}
+              After having completed my MBO Level 4 education in Software and Web Development, I plan to study{" "}
               <strong className="font-black text-foreground">Nutrition and Dietetics at HAN University of Applied Sciences</strong>.
               I want to learn more about nutrition and combine this knowledge with my interests in{" "}
               <strong className="font-black text-foreground">sports and cooking</strong>.

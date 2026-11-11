@@ -127,6 +127,7 @@ const ComingSoonCard = ({ isVisible, index }: { isVisible: boolean; index: numbe
 
 const ProjectsPage = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [showAllWebProjects, setShowAllWebProjects] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -232,19 +233,22 @@ const ProjectsPage = () => {
     },
   ];
 
+  const visibleProjects = showAllWebProjects ? projects : projects.slice(0, 8);
+  const canToggleWebProjects = projects.length > 8;
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Header />
       <main>
         <section className="pt-32 pb-16 px-6 md:px-10 lg:px-16">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Top <span className="text-accent">Projects</span></h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Top Digital <span className="text-accent">Projects</span></h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-12">
-              A collection of my most recent and best works across various domains including web development and design. These are the works that I am currently the most proud of to showcase.
+              A collection of my most recent and best works across various domains including web development and design, but also everything related to Nutrition and Dietetics. These are the works that I am currently the most proud of to showcase.
             </p>
             
             <div id="projects-grid" className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
-              {projects.map((project, index) => {
+              {visibleProjects.map((project, index) => {
                 return (
                   <div key={index}>
                     <ProjectCard 
@@ -262,7 +266,42 @@ const ProjectsPage = () => {
                   </div>
                 );
               })}
-              <ComingSoonCard isVisible={isVisible} index={projects.length} />
+              {showAllWebProjects && (
+                <ComingSoonCard isVisible={isVisible} index={visibleProjects.length} />
+              )}
+            </div>
+
+            {canToggleWebProjects && (
+              <div className="mt-10 flex justify-center">
+                <button
+                  onClick={() => setShowAllWebProjects((current) => !current)}
+                  className="group relative inline-flex items-center gap-3 px-1 py-3 font-black uppercase tracking-[0.24em] text-foreground transition-colors duration-300 hover:text-accent"
+                >
+                  <span className="relative inline-block">
+                    <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
+                      {showAllWebProjects ? "See Less" : "See More"}
+                    </span>
+                    <span className="absolute inset-0 z-20 bg-gradient-to-r from-pink-500 via-orange-500 to-amber-500 bg-clip-text text-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      {showAllWebProjects ? "See Less" : "See More"}
+                    </span>
+                  </span>
+                  <ArrowUpRight className={`h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 ${showAllWebProjects ? "rotate-180 group-hover:translate-y-1" : "group-hover:-translate-y-1"}`} />
+                  <span className="absolute bottom-1 left-1 h-[3px] w-full origin-left scale-x-0 rounded-full bg-gradient-to-r from-pink-500 via-orange-500 to-amber-500 transition-transform duration-300 group-hover:scale-x-100" />
+                </button>
+              </div>
+            )}
+
+            <div className="mt-24">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Top Nutrition/Dietetics <span className="text-accent">Projects</span></h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mb-12">
+                A future collection of projects focused on nutrition, dietetics, health, research, and creative ways to combine wellness with tailored solutions.
+              </p>
+
+              <div className="rounded-lg border border-dashed border-border/80 bg-card/60 px-6 py-16 text-center shadow-[0_24px_80px_rgba(57,44,28,0.08)] backdrop-blur-xl">
+                <h3 className="text-3xl font-black tracking-[-0.055em] md:text-4xl">
+                  Coming in the future
+                </h3>
+              </div>
             </div>
           </div>
         </section>

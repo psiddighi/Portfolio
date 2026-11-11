@@ -57,7 +57,7 @@ const Projects = () => {
     <section id="projects-section" className="py-16 px-6 md:px-10 lg:px-16 relative">
       <div className="max-w-6xl mx-auto">
         <h2 className="uppercase text-xl mb-2 flex items-center gap-4">
-          <span className="inline-block dot-separator shrink-0">SIDE PROJECTS</span>
+          <span className="inline-block dot-separator shrink-0">RECENT PROJECTS</span>
           <span className="h-px flex-1 bg-gradient-to-r from-foreground/20 to-transparent" aria-hidden="true" />
         </h2>
         
